@@ -1,0 +1,6 @@
+view_or_dataset,task_type,total_records,train,dev,test,external_test,unlabeled
+Master Dataset,multi_task_unified,15525,11130,1589,2450,56,300
+Verification View,citation_and_claim_verification,1754,1226,263,265,0,0
+Citation Intent View,citation_intent,11020,8243,916,1861,0,0
+Claim Detection View,sentence_role_detection,2391,1657,410,324,0,0
+External Robustness View,external_robustness_verification,56,0,0,0,56,0

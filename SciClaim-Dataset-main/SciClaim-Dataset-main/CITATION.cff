@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this dataset, please cite our paper."
+authors:
+  - family-names: Lin
+    given-names: Xin
+  - family-names: Wang
+    given-names: Yajiao
+  - family-names: Zhang
+    given-names: Zhixiong
+  - name: others
+title: "SciClaim Dataset: Scientific Claim Recognition via Staged Fine-Tuning with LoRA"
+version: 1.0.0
+date-released: 2025-06-11
+doi: 10.3724/2096-7004.di.2025.0009
+url: https://github.com/Lynnnx/SciClaim-Dataset
+license: CC-BY-NC-4.0

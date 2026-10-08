@@ -1,0 +1,2154 @@
+{
+  "best_overall": {
+    "model": "Linear SVM",
+    "condition_key": "condition_c",
+    "condition_name": "Condition C: Claim + Evidence (Strict)",
+    "dev_acc": 0.7072243346007605,
+    "dev_macro_f1": 0.693409680207433,
+    "test_acc": 0.6415094339622641,
+    "test_macro_f1": 0.6323671947809879,
+    "test_weighted_f1": 0.6376158188116549,
+    "test_metrics_full": {
+      "accuracy": 0.6415094339622641,
+      "macro_f1": 0.6323671947809879,
+      "weighted_f1": 0.6376158188116549,
+      "per_class": {
+        "SUPPORTED": {
+          "precision": 0.7241379310344828,
+          "recall": 0.5575221238938053,
+          "f1": 0.63
+        },
+        "CONTRADICTED": {
+          "precision": 0.49333333333333335,
+          "recall": 0.5285714285714286,
+          "f1": 0.5103448275862069
+        },
+        "NOT_ENOUGH_EVIDENCE": {
+          "precision": 0.6796116504854369,
+          "recall": 0.8536585365853658,
+          "f1": 0.7567567567567568
+        }
+      },
+      "confusion_matrix": [
+        [
+          63,
+          30,
+          20
+        ],
+        [
+          20,
+          37,
+          13
+        ],
+        [
+          4,
+          8,
+          70
+        ]
+      ]
+    }
+  },
+  "majority_baseline": {
+    "dev": {
+      "accuracy": 0.3612167300380228,
+      "macro_f1": 0.17690875232774675,
+      "weighted_f1": 0.19170720309280542,
+      "per_class": {
+        "SUPPORTED": {
+          "precision": 0.3612167300380228,
+          "recall": 1.0,
+          "f1": 0.5307262569832403
+        },
+        "CONTRADICTED": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "NOT_ENOUGH_EVIDENCE": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          95,
+          0,
+          0
+        ],
+        [
+          67,
+          0,
+          0
+        ],
+        [
+          101,
+          0,
+          0
+        ]
+      ]
+    },
+    "test": {
+      "accuracy": 0.42641509433962266,
+      "macro_f1": 0.19929453262786598,
+      "weighted_f1": 0.2549465907956474,
+      "per_class": {
+        "SUPPORTED": {
+          "precision": 0.42641509433962266,
+          "recall": 1.0,
+          "f1": 0.5978835978835979
+        },
+        "CONTRADICTED": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "NOT_ENOUGH_EVIDENCE": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          113,
+          0,
+          0
+        ],
+        [
+          70,
+          0,
+          0
+        ],
+        [
+          82,
+          0,
+          0
+        ]
+      ]
+    }
+  },
+  "lr_config": {
+    "feature_cfg": {
+      "ngram_range": [
+        1,
+        2
+      ],
+      "min_df": 1,
+      "max_features": 10000,
+      "sublinear_tf": true
+    },
+    "C": 2.0,
+    "dev_macro_f1": 0.5569770196635868
+  },
+  "svm_config": {
+    "feature_cfg": {
+      "ngram_range": [
+        1,
+        2
+      ],
+      "min_df": 2,
+      "max_features": null,
+      "sublinear_tf": true
+    },
+    "C": 5.0,
+    "dev_macro_f1": 0.5566387927759989
+  },
+  "all_results": [
+    {
+      "model": "Logistic Regression",
+      "condition_key": "condition_a",
+      "condition_name": "Condition A: Claim Only",
+      "dev_acc": 0.5019011406844106,
+      "dev_macro_f1": 0.5069211805860055,
+      "test_acc": 0.5056603773584906,
+      "test_macro_f1": 0.4984492084521505,
+      "test_weighted_f1": 0.503690535228341,
+      "test_metrics_full": {
+        "accuracy": 0.5056603773584906,
+        "macro_f1": 0.4984492084521505,
+        "weighted_f1": 0.503690535228341,
+        "per_class": {
+          "SUPPORTED": {
+            "precision": 0.5614035087719298,
+            "recall": 0.5663716814159292,
+            "f1": 0.5638766519823789
+          },
+          "CONTRADICTED": {
+            "precision": 0.5333333333333333,
+            "recall": 0.5714285714285714,
+            "f1": 0.5517241379310345
+          },
+          "NOT_ENOUGH_EVIDENCE": {
+            "precision": 0.39473684210526316,
+            "recall": 0.36585365853658536,
+            "f1": 0.379746835443038
+          }
+        },
+        "confusion_matrix": [
+          [
+            64,
+            20,
+            29
+          ],
+          [
+            13,
+            40,
+            17
+          ],
+          [
+            37,
+            15,
+            30
+          ]
+        ]
+      }
+    },
+    {
+      "model": "Linear SVM",
+      "condition_key": "condition_a",
+      "condition_name": "Condition A: Claim Only",
+      "dev_acc": 0.467680608365019,
+      "dev_macro_f1": 0.468073309718158,
+      "test_acc": 0.4981132075471698,
+      "test_macro_f1": 0.4845188193464353,
+      "test_weighted_f1": 0.48869082214603105,
+      "test_metrics_full": {
+        "accuracy": 0.4981132075471698,
+        "macro_f1": 0.4845188193464353,
+        "weighted_f1": 0.48869082214603105,
+        "per_class": {
+          "SUPPORTED": {
+            "precision": 0.5535714285714286,
+            "recall": 0.5486725663716814,
+            "f1": 0.5511111111111111
+          },
+          "CONTRADICTED": {
+            "precision": 0.4946236559139785,
+            "recall": 0.6571428571428571,
+            "f1": 0.5644171779141104
+          },
+          "NOT_ENOUGH_EVIDENCE": {
+            "precision": 0.4,
+            "recall": 0.2926829268292683,
+            "f1": 0.3380281690140845
+          }
+        },
+        "confusion_matrix": [
+          [
+            62,
+            25,
+            26
+          ],
+          [
+            14,
+            46,
+            10
+          ],
+          [
+            36,
+            22,
+            24
+          ]
+        ]
+      }
+    },
+    {
+      "model": "Logistic Regression",
+      "condition_key": "condition_b",
+      "condition_name": "Condition B: Claim + Title",
+      "dev_acc": 0.4828897338403042,
+      "dev_macro_f1": 0.48547865829210113,
+      "test_acc": 0.47547169811320755,
+      "test_macro_f1": 0.4772764178135021,
+      "test_weighted_f1": 0.4728444891765839,
+      "test_metrics_full": {
+        "accuracy": 0.47547169811320755,
+        "macro_f1": 0.4772764178135021,
+        "weighted_f1": 0.4728444891765839,
+        "per_class": {
+          "SUPPORTED": {
+            "precision": 0.49514563106796117,
+            "recall": 0.45132743362831856,
+            "f1": 0.4722222222222222
+          },
+          "CONTRADICTED": {
+            "precision": 0.5180722891566265,
+            "recall": 0.6142857142857143,
+            "f1": 0.5620915032679739
+          },
+          "NOT_ENOUGH_EVIDENCE": {
+            "precision": 0.4050632911392405,
+            "recall": 0.3902439024390244,
+            "f1": 0.39751552795031053
+          }
+        },
+        "confusion_matrix": [
+          [
+            51,
+            27,
+            35
+          ],
+          [
+            15,
+            43,
+            12
+          ],
+          [
+            37,
+            13,
+            32
+          ]
+        ]
+      }
+    },
+    {
+      "model": "Linear SVM",
+      "condition_key": "condition_b",
+      "condition_name": "Condition B: Claim + Title",
+      "dev_acc": 0.4828897338403042,
+      "dev_macro_f1": 0.4791464311994113,
+      "test_acc": 0.5207547169811321,
+      "test_macro_f1": 0.5199699731009029,
+      "test_weighted_f1": 0.5166290084552946,
+      "test_metrics_full": {
+        "accuracy": 0.5207547169811321,
+        "macro_f1": 0.5199699731009029,
+        "weighted_f1": 0.5166290084552946,
+        "per_class": {
+          "SUPPORTED": {
+            "precision": 0.5370370370370371,
+            "recall": 0.5132743362831859,
+            "f1": 0.5248868778280543
+          },
+          "CONTRADICTED": {
+            "precision": 0.5529411764705883,
+            "recall": 0.6714285714285714,
+            "f1": 0.6064516129032258
+          },
+          "NOT_ENOUGH_EVIDENCE": {
+            "precision": 0.4583333333333333,
+            "recall": 0.4024390243902439,
+            "f1": 0.42857142857142855
+          }
+        },
+        "confusion_matrix": [
+          [
+            58,
+            23,
+            32
+          ],
+          [
+            16,
+            47,
+            7
+          ],
+          [
+            34,
+            15,
+            33
+          ]
+        ]
+      }
+    },
+    {
+      "model": "Logistic Regression",
+      "condition_key": "condition_c",
+      "condition_name": "Condition C: Claim + Evidence (Strict)",
+      "dev_acc": 0.6806083650190115,
+      "dev_macro_f1": 0.6740865088691176,
+      "test_acc": 0.6716981132075471,
+      "test_macro_f1": 0.6753810112243848,
+      "test_weighted_f1": 0.6800189145551727,
+      "test_metrics_full": {
+        "accuracy": 0.6716981132075471,
+        "macro_f1": 0.6753810112243848,
+        "weighted_f1": 0.6800189145551727,
+        "per_class": {
+          "SUPPORTED": {
+            "precision": 0.7263157894736842,
+            "recall": 0.6106194690265486,
+            "f1": 0.6634615384615384
+          },
+          "CONTRADICTED": {
+            "precision": 0.46875,
+            "recall": 0.6428571428571429,
+            "f1": 0.5421686746987951
+          },
+          "NOT_ENOUGH_EVIDENCE": {
+            "precision": 0.8648648648648649,
+            "recall": 0.7804878048780488,
+            "f1": 0.8205128205128205
+          }
+        },
+        "confusion_matrix": [
+          [
+            69,
+            39,
+            5
+          ],
+          [
+            20,
+            45,
+            5
+          ],
+          [
+            6,
+            12,
+            64
+          ]
+        ]
+      }
+    },
+    {
+      "model": "Linear SVM",
+      "condition_key": "condition_c",
+      "condition_name": "Condition C: Claim + Evidence (Strict)",
+      "dev_acc": 0.7072243346007605,
+      "dev_macro_f1": 0.693409680207433,
+      "test_acc": 0.6415094339622641,
+      "test_macro_f1": 0.6323671947809879,
+      "test_weighted_f1": 0.6376158188116549,
+      "test_metrics_full": {
+        "accuracy": 0.6415094339622641,
+        "macro_f1": 0.6323671947809879,
+        "weighted_f1": 0.6376158188116549,
+        "per_class": {
+          "SUPPORTED": {
+            "precision": 0.7241379310344828,
+            "recall": 0.5575221238938053,
+            "f1": 0.63
+          },
+          "CONTRADICTED": {
+            "precision": 0.49333333333333335,
+            "recall": 0.5285714285714286,
+            "f1": 0.5103448275862069
+          },
+          "NOT_ENOUGH_EVIDENCE": {
+            "precision": 0.6796116504854369,
+            "recall": 0.8536585365853658,
+            "f1": 0.7567567567567568
+          }
+        },
+        "confusion_matrix": [
+          [
+            63,
+            30,
+            20
+          ],
+          [
+            20,
+            37,
+            13
+          ],
+          [
+            4,
+            8,
+            70
+          ]
+        ]
+      }
+    },
+    {
+      "model": "Logistic Regression",
+      "condition_key": "condition_d",
+      "condition_name": "Condition D: Claim + Abstract Fallback",
+      "dev_acc": 0.5817490494296578,
+      "dev_macro_f1": 0.5598772660960857,
+      "test_acc": 0.5358490566037736,
+      "test_macro_f1": 0.5248428611210566,
+      "test_weighted_f1": 0.5346263007023399,
+      "test_metrics_full": {
+        "accuracy": 0.5358490566037736,
+        "macro_f1": 0.5248428611210566,
+        "weighted_f1": 0.5346263007023399,
+        "per_class": {
+          "SUPPORTED": {
+            "precision": 0.6626506024096386,
+            "recall": 0.48672566371681414,
+            "f1": 0.5612244897959183
+          },
+          "CONTRADICTED": {
+            "precision": 0.3918918918918919,
+            "recall": 0.4142857142857143,
+            "f1": 0.4027777777777778
+          },
+          "NOT_ENOUGH_EVIDENCE": {
+            "precision": 0.5370370370370371,
+            "recall": 0.7073170731707317,
+            "f1": 0.6105263157894737
+          }
+        },
+        "confusion_matrix": [
+          [
+            55,
+            29,
+            29
+          ],
+          [
+            20,
+            29,
+            21
+          ],
+          [
+            8,
+            16,
+            58
+          ]
+        ]
+      }
+    },
+    {
+      "model": "Linear SVM",
+      "condition_key": "condition_d",
+      "condition_name": "Condition D: Claim + Abstract Fallback",
+      "dev_acc": 0.5437262357414449,
+      "dev_macro_f1": 0.5405125490974033,
+      "test_acc": 0.5283018867924528,
+      "test_macro_f1": 0.5209869410292982,
+      "test_weighted_f1": 0.5321350229146861,
+      "test_metrics_full": {
+        "accuracy": 0.5283018867924528,
+        "macro_f1": 0.5209869410292982,
+        "weighted_f1": 0.5321350229146861,
+        "per_class": {
+          "SUPPORTED": {
+            "precision": 0.6785714285714286,
+            "recall": 0.504424778761062,
+            "f1": 0.5786802030456852
+          },
+          "CONTRADICTED": {
+            "precision": 0.3950617283950617,
+            "recall": 0.45714285714285713,
+            "f1": 0.423841059602649
+          },
+          "NOT_ENOUGH_EVIDENCE": {
+            "precision": 0.51,
+            "recall": 0.6219512195121951,
+            "f1": 0.5604395604395604
+          }
+        },
+        "confusion_matrix": [
+          [
+            57,
+            27,
+            29
+          ],
+          [
+            18,
+            32,
+            20
+          ],
+          [
+            9,
+            22,
+            51
+          ]
+        ]
+      }
+    },
+    {
+      "model": "Logistic Regression",
+      "condition_key": "condition_e",
+      "condition_name": "Condition E: Full Standardized Input",
+      "dev_acc": 0.5779467680608364,
+      "dev_macro_f1": 0.5569770196635868,
+      "test_acc": 0.5169811320754717,
+      "test_macro_f1": 0.5048959017764103,
+      "test_weighted_f1": 0.5155134627751897,
+      "test_metrics_full": {
+        "accuracy": 0.5169811320754717,
+        "macro_f1": 0.5048959017764103,
+        "weighted_f1": 0.5155134627751897,
+        "per_class": {
+          "SUPPORTED": {
+            "precision": 0.654320987654321,
+            "recall": 0.4690265486725664,
+            "f1": 0.5463917525773195
+          },
+          "CONTRADICTED": {
+            "precision": 0.3698630136986301,
+            "recall": 0.38571428571428573,
+            "f1": 0.3776223776223776
+          },
+          "NOT_ENOUGH_EVIDENCE": {
+            "precision": 0.5135135135135135,
+            "recall": 0.6951219512195121,
+            "f1": 0.5906735751295337
+          }
+        },
+        "confusion_matrix": [
+          [
+            53,
+            28,
+            32
+          ],
+          [
+            21,
+            27,
+            22
+          ],
+          [
+            7,
+            18,
+            57
+          ]
+        ]
+      }
+    },
+    {
+      "model": "Linear SVM",
+      "condition_key": "condition_e",
+      "condition_name": "Condition E: Full Standardized Input",
+      "dev_acc": 0.55893536121673,
+      "dev_macro_f1": 0.5566387927759989,
+      "test_acc": 0.5358490566037736,
+      "test_macro_f1": 0.5292935395700775,
+      "test_weighted_f1": 0.5368516672192557,
+      "test_metrics_full": {
+        "accuracy": 0.5358490566037736,
+        "macro_f1": 0.5292935395700775,
+        "weighted_f1": 0.5368516672192557,
+        "per_class": {
+          "SUPPORTED": {
+            "precision": 0.6511627906976745,
+            "recall": 0.49557522123893805,
+            "f1": 0.5628140703517588
+          },
+          "CONTRADICTED": {
+            "precision": 0.42857142857142855,
+            "recall": 0.4714285714285714,
+            "f1": 0.4489795918367347
+          },
+          "NOT_ENOUGH_EVIDENCE": {
+            "precision": 0.5196078431372549,
+            "recall": 0.6463414634146342,
+            "f1": 0.5760869565217391
+          }
+        },
+        "confusion_matrix": [
+          [
+            56,
+            26,
+            31
+          ],
+          [
+            19,
+            33,
+            18
+          ],
+          [
+            11,
+            18,
+            53
+          ]
+        ]
+      }
+    }
+  ],
+  "subset_results": [
+    {
+      "model": "Logistic Regression",
+      "condition_key": "condition_a",
+      "condition_name": "Condition A: Claim Only",
+      "subset": "Combined Test",
+      "n_samples": 265,
+      "accuracy": 0.5056603773584906,
+      "macro_f1": 0.4984492084521505,
+      "weighted_f1": 0.503690535228341,
+      "sup_f1": 0.5638766519823789,
+      "con_f1": 0.5517241379310345,
+      "nee_f1": 0.379746835443038,
+      "confusion_matrix": [
+        [
+          64,
+          20,
+          29
+        ],
+        [
+          13,
+          40,
+          17
+        ],
+        [
+          37,
+          15,
+          30
+        ]
+      ]
+    },
+    {
+      "model": "Logistic Regression",
+      "condition_key": "condition_a",
+      "condition_name": "Condition A: Claim Only",
+      "subset": "Natural-Only Test",
+      "n_samples": 228,
+      "accuracy": 0.45614035087719296,
+      "macro_f1": 0.40581866934808114,
+      "weighted_f1": 0.46010020022403925,
+      "sup_f1": 0.5688888888888889,
+      "con_f1": 0.2564102564102564,
+      "nee_f1": 0.39215686274509803,
+      "confusion_matrix": [
+        [
+          64,
+          20,
+          29
+        ],
+        [
+          11,
+          10,
+          12
+        ],
+        [
+          37,
+          15,
+          30
+        ]
+      ]
+    },
+    {
+      "model": "Logistic Regression",
+      "condition_key": "condition_a",
+      "condition_name": "Condition A: Claim Only",
+      "subset": "Synthetic-Negation Test",
+      "n_samples": 37,
+      "accuracy": 0.8108108108108109,
+      "macro_f1": 0.2985074626865672,
+      "weighted_f1": 0.8955223880597014,
+      "sup_f1": 0.0,
+      "con_f1": 0.8955223880597015,
+      "nee_f1": 0.0,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          30,
+          5
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "model": "Logistic Regression",
+      "condition_key": "condition_a",
+      "condition_name": "Condition A: Claim Only",
+      "subset": "SCitance Test",
+      "n_samples": 93,
+      "accuracy": 0.6451612903225806,
+      "macro_f1": 0.6164342480131954,
+      "weighted_f1": 0.6497225970910181,
+      "sup_f1": 0.6153846153846154,
+      "con_f1": 0.7894736842105263,
+      "nee_f1": 0.4444444444444444,
+      "confusion_matrix": [
+        [
+          20,
+          6,
+          11
+        ],
+        [
+          2,
+          30,
+          5
+        ],
+        [
+          6,
+          3,
+          10
+        ]
+      ]
+    },
+    {
+      "model": "Logistic Regression",
+      "condition_key": "condition_a",
+      "condition_name": "Condition A: Claim Only",
+      "subset": "SciFact Test",
+      "n_samples": 172,
+      "accuracy": 0.43023255813953487,
+      "macro_f1": 0.3956824166306445,
+      "weighted_f1": 0.42529100560663086,
+      "sup_f1": 0.5432098765432098,
+      "con_f1": 0.2898550724637681,
+      "nee_f1": 0.35398230088495575,
+      "confusion_matrix": [
+        [
+          44,
+          14,
+          18
+        ],
+        [
+          11,
+          10,
+          12
+        ],
+        [
+          31,
+          12,
+          20
+        ]
+      ]
+    },
+    {
+      "model": "Linear SVM",
+      "condition_key": "condition_a",
+      "condition_name": "Condition A: Claim Only",
+      "subset": "Combined Test",
+      "n_samples": 265,
+      "accuracy": 0.4981132075471698,
+      "macro_f1": 0.4845188193464353,
+      "weighted_f1": 0.48869082214603105,
+      "sup_f1": 0.5511111111111111,
+      "con_f1": 0.5644171779141104,
+      "nee_f1": 0.3380281690140845,
+      "confusion_matrix": [
+        [
+          62,
+          25,
+          26
+        ],
+        [
+          14,
+          46,
+          10
+        ],
+        [
+          36,
+          22,
+          24
+        ]
+      ]
+    },
+    {
+      "model": "Linear SVM",
+      "condition_key": "condition_a",
+      "condition_name": "Condition A: Claim Only",
+      "subset": "Natural-Only Test",
+      "n_samples": 228,
+      "accuracy": 0.43859649122807015,
+      "macro_f1": 0.39974996436397303,
+      "weighted_f1": 0.4428965557636898,
+      "sup_f1": 0.5560538116591929,
+      "con_f1": 0.2978723404255319,
+      "nee_f1": 0.34532374100719426,
+      "confusion_matrix": [
+        [
+          62,
+          25,
+          26
+        ],
+        [
+          12,
+          14,
+          7
+        ],
+        [
+          36,
+          22,
+          24
+        ]
+      ]
+    },
+    {
+      "model": "Linear SVM",
+      "condition_key": "condition_a",
+      "condition_name": "Condition A: Claim Only",
+      "subset": "Synthetic-Negation Test",
+      "n_samples": 37,
+      "accuracy": 0.8648648648648649,
+      "macro_f1": 0.30917874396135264,
+      "weighted_f1": 0.9275362318840581,
+      "sup_f1": 0.0,
+      "con_f1": 0.927536231884058,
+      "nee_f1": 0.0,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          32,
+          3
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "model": "Linear SVM",
+      "condition_key": "condition_a",
+      "condition_name": "Condition A: Claim Only",
+      "subset": "SCitance Test",
+      "n_samples": 93,
+      "accuracy": 0.6559139784946236,
+      "macro_f1": 0.6123307513067573,
+      "weighted_f1": 0.6534270257532265,
+      "sup_f1": 0.6268656716417911,
+      "con_f1": 0.810126582278481,
+      "nee_f1": 0.4,
+      "confusion_matrix": [
+        [
+          21,
+          6,
+          10
+        ],
+        [
+          2,
+          32,
+          3
+        ],
+        [
+          7,
+          4,
+          8
+        ]
+      ]
+    },
+    {
+      "model": "Linear SVM",
+      "condition_key": "condition_a",
+      "condition_name": "Condition A: Claim Only",
+      "subset": "SciFact Test",
+      "n_samples": 172,
+      "accuracy": 0.4127906976744186,
+      "macro_f1": 0.38868205510052123,
+      "weighted_f1": 0.4081845573083517,
+      "sup_f1": 0.5189873417721519,
+      "con_f1": 0.3333333333333333,
+      "nee_f1": 0.3137254901960784,
+      "confusion_matrix": [
+        [
+          41,
+          19,
+          16
+        ],
+        [
+          12,
+          14,
+          7
+        ],
+        [
+          29,
+          18,
+          16
+        ]
+      ]
+    },
+    {
+      "model": "Logistic Regression",
+      "condition_key": "condition_b",
+      "condition_name": "Condition B: Claim + Title",
+      "subset": "Combined Test",
+      "n_samples": 265,
+      "accuracy": 0.47547169811320755,
+      "macro_f1": 0.4772764178135021,
+      "weighted_f1": 0.4728444891765839,
+      "sup_f1": 0.4722222222222222,
+      "con_f1": 0.5620915032679739,
+      "nee_f1": 0.39751552795031053,
+      "confusion_matrix": [
+        [
+          51,
+          27,
+          35
+        ],
+        [
+          15,
+          43,
+          12
+        ],
+        [
+          37,
+          13,
+          32
+        ]
+      ]
+    },
+    {
+      "model": "Logistic Regression",
+      "condition_key": "condition_b",
+      "condition_name": "Condition B: Claim + Title",
+      "subset": "Natural-Only Test",
+      "n_samples": 228,
+      "accuracy": 0.41228070175438597,
+      "macro_f1": 0.3810979082039407,
+      "weighted_f1": 0.4200079934533828,
+      "sup_f1": 0.4788732394366197,
+      "con_f1": 0.2619047619047619,
+      "nee_f1": 0.4025157232704403,
+      "confusion_matrix": [
+        [
+          51,
+          27,
+          35
+        ],
+        [
+          12,
+          11,
+          10
+        ],
+        [
+          37,
+          13,
+          32
+        ]
+      ]
+    },
+    {
+      "model": "Logistic Regression",
+      "condition_key": "condition_b",
+      "condition_name": "Condition B: Claim + Title",
+      "subset": "Synthetic-Negation Test",
+      "n_samples": 37,
+      "accuracy": 0.8648648648648649,
+      "macro_f1": 0.30917874396135264,
+      "weighted_f1": 0.9275362318840581,
+      "sup_f1": 0.0,
+      "con_f1": 0.927536231884058,
+      "nee_f1": 0.0,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          3,
+          32,
+          2
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "model": "Logistic Regression",
+      "condition_key": "condition_b",
+      "condition_name": "Condition B: Claim + Title",
+      "subset": "SCitance Test",
+      "n_samples": 93,
+      "accuracy": 0.6344086021505376,
+      "macro_f1": 0.5993629908103592,
+      "weighted_f1": 0.6236879160266257,
+      "sup_f1": 0.5625,
+      "con_f1": 0.7619047619047619,
+      "nee_f1": 0.47368421052631576,
+      "confusion_matrix": [
+        [
+          18,
+          11,
+          8
+        ],
+        [
+          3,
+          32,
+          2
+        ],
+        [
+          6,
+          4,
+          9
+        ]
+      ]
+    },
+    {
+      "model": "Logistic Regression",
+      "condition_key": "condition_b",
+      "condition_name": "Condition B: Claim + Title",
+      "subset": "SciFact Test",
+      "n_samples": 172,
+      "accuracy": 0.38953488372093026,
+      "macro_f1": 0.37567828195444425,
+      "weighted_f1": 0.3900157833732028,
+      "sup_f1": 0.4342105263157895,
+      "con_f1": 0.3188405797101449,
+      "nee_f1": 0.37398373983739835,
+      "confusion_matrix": [
+        [
+          33,
+          16,
+          27
+        ],
+        [
+          12,
+          11,
+          10
+        ],
+        [
+          31,
+          9,
+          23
+        ]
+      ]
+    },
+    {
+      "model": "Linear SVM",
+      "condition_key": "condition_b",
+      "condition_name": "Condition B: Claim + Title",
+      "subset": "Combined Test",
+      "n_samples": 265,
+      "accuracy": 0.5207547169811321,
+      "macro_f1": 0.5199699731009029,
+      "weighted_f1": 0.5166290084552946,
+      "sup_f1": 0.5248868778280543,
+      "con_f1": 0.6064516129032258,
+      "nee_f1": 0.42857142857142855,
+      "confusion_matrix": [
+        [
+          58,
+          23,
+          32
+        ],
+        [
+          16,
+          47,
+          7
+        ],
+        [
+          34,
+          15,
+          33
+        ]
+      ]
+    },
+    {
+      "model": "Linear SVM",
+      "condition_key": "condition_b",
+      "condition_name": "Condition B: Claim + Title",
+      "subset": "Natural-Only Test",
+      "n_samples": 228,
+      "accuracy": 0.4605263157894737,
+      "macro_f1": 0.43096480182286984,
+      "weighted_f1": 0.4665420071134844,
+      "sup_f1": 0.5321100917431193,
+      "con_f1": 0.32941176470588235,
+      "nee_f1": 0.43137254901960786,
+      "confusion_matrix": [
+        [
+          58,
+          23,
+          32
+        ],
+        [
+          13,
+          14,
+          6
+        ],
+        [
+          34,
+          15,
+          33
+        ]
+      ]
+    },
+    {
+      "model": "Linear SVM",
+      "condition_key": "condition_b",
+      "condition_name": "Condition B: Claim + Title",
+      "subset": "Synthetic-Negation Test",
+      "n_samples": 37,
+      "accuracy": 0.8918918918918919,
+      "macro_f1": 0.3142857142857143,
+      "weighted_f1": 0.9428571428571428,
+      "sup_f1": 0.0,
+      "con_f1": 0.9428571428571428,
+      "nee_f1": 0.0,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          3,
+          33,
+          1
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "model": "Linear SVM",
+      "condition_key": "condition_b",
+      "condition_name": "Condition B: Claim + Title",
+      "subset": "SCitance Test",
+      "n_samples": 93,
+      "accuracy": 0.7096774193548387,
+      "macro_f1": 0.6704997920009509,
+      "weighted_f1": 0.7034997517430704,
+      "sup_f1": 0.676056338028169,
+      "con_f1": 0.8354430379746836,
+      "nee_f1": 0.5,
+      "confusion_matrix": [
+        [
+          24,
+          6,
+          7
+        ],
+        [
+          3,
+          33,
+          1
+        ],
+        [
+          7,
+          3,
+          9
+        ]
+      ]
+    },
+    {
+      "model": "Linear SVM",
+      "condition_key": "condition_b",
+      "condition_name": "Condition B: Claim + Title",
+      "subset": "SciFact Test",
+      "n_samples": 172,
+      "accuracy": 0.4186046511627907,
+      "macro_f1": 0.40951134899395375,
+      "weighted_f1": 0.4199903878735072,
+      "sup_f1": 0.4533333333333333,
+      "con_f1": 0.3684210526315789,
+      "nee_f1": 0.4067796610169492,
+      "confusion_matrix": [
+        [
+          34,
+          17,
+          25
+        ],
+        [
+          13,
+          14,
+          6
+        ],
+        [
+          27,
+          12,
+          24
+        ]
+      ]
+    },
+    {
+      "model": "Logistic Regression",
+      "condition_key": "condition_c",
+      "condition_name": "Condition C: Claim + Evidence (Strict)",
+      "subset": "Combined Test",
+      "n_samples": 265,
+      "accuracy": 0.6716981132075471,
+      "macro_f1": 0.6753810112243848,
+      "weighted_f1": 0.6800189145551727,
+      "sup_f1": 0.6634615384615384,
+      "con_f1": 0.5421686746987951,
+      "nee_f1": 0.8205128205128205,
+      "confusion_matrix": [
+        [
+          69,
+          39,
+          5
+        ],
+        [
+          20,
+          45,
+          5
+        ],
+        [
+          6,
+          12,
+          64
+        ]
+      ]
+    },
+    {
+      "model": "Logistic Regression",
+      "condition_key": "condition_c",
+      "condition_name": "Condition C: Claim + Evidence (Strict)",
+      "subset": "Natural-Only Test",
+      "n_samples": 228,
+      "accuracy": 0.6447368421052632,
+      "macro_f1": 0.5992408204978465,
+      "weighted_f1": 0.6762290883058438,
+      "sup_f1": 0.6699029126213593,
+      "con_f1": 0.2857142857142857,
+      "nee_f1": 0.8421052631578947,
+      "confusion_matrix": [
+        [
+          69,
+          39,
+          5
+        ],
+        [
+          18,
+          14,
+          1
+        ],
+        [
+          6,
+          12,
+          64
+        ]
+      ]
+    },
+    {
+      "model": "Logistic Regression",
+      "condition_key": "condition_c",
+      "condition_name": "Condition C: Claim + Evidence (Strict)",
+      "subset": "Synthetic-Negation Test",
+      "n_samples": 37,
+      "accuracy": 0.8378378378378378,
+      "macro_f1": 0.30392156862745096,
+      "weighted_f1": 0.9117647058823529,
+      "sup_f1": 0.0,
+      "con_f1": 0.9117647058823529,
+      "nee_f1": 0.0,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          31,
+          4
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "model": "Logistic Regression",
+      "condition_key": "condition_c",
+      "condition_name": "Condition C: Claim + Evidence (Strict)",
+      "subset": "SCitance Test",
+      "n_samples": 93,
+      "accuracy": 0.5053763440860215,
+      "macro_f1": 0.4013605442176871,
+      "weighted_f1": 0.46521834540267715,
+      "sup_f1": 0.5,
+      "con_f1": 0.6326530612244898,
+      "nee_f1": 0.07142857142857142,
+      "confusion_matrix": [
+        [
+          15,
+          18,
+          4
+        ],
+        [
+          2,
+          31,
+          4
+        ],
+        [
+          6,
+          12,
+          1
+        ]
+      ]
+    },
+    {
+      "model": "Logistic Regression",
+      "condition_key": "condition_c",
+      "condition_name": "Condition C: Claim + Evidence (Strict)",
+      "subset": "SciFact Test",
+      "n_samples": 172,
+      "accuracy": 0.7616279069767442,
+      "macro_f1": 0.7086231452040276,
+      "weighted_f1": 0.7619960450789367,
+      "sup_f1": 0.7297297297297297,
+      "con_f1": 0.4117647058823529,
+      "nee_f1": 0.984375,
+      "confusion_matrix": [
+        [
+          54,
+          21,
+          1
+        ],
+        [
+          18,
+          14,
+          1
+        ],
+        [
+          0,
+          0,
+          63
+        ]
+      ]
+    },
+    {
+      "model": "Linear SVM",
+      "condition_key": "condition_c",
+      "condition_name": "Condition C: Claim + Evidence (Strict)",
+      "subset": "Combined Test",
+      "n_samples": 265,
+      "accuracy": 0.6415094339622641,
+      "macro_f1": 0.6323671947809879,
+      "weighted_f1": 0.6376158188116549,
+      "sup_f1": 0.63,
+      "con_f1": 0.5103448275862069,
+      "nee_f1": 0.7567567567567568,
+      "confusion_matrix": [
+        [
+          63,
+          30,
+          20
+        ],
+        [
+          20,
+          37,
+          13
+        ],
+        [
+          4,
+          8,
+          70
+        ]
+      ]
+    },
+    {
+      "model": "Linear SVM",
+      "condition_key": "condition_c",
+      "condition_name": "Condition C: Claim + Evidence (Strict)",
+      "subset": "Natural-Only Test",
+      "n_samples": 228,
+      "accuracy": 0.6403508771929824,
+      "macro_f1": 0.5834950490122904,
+      "weighted_f1": 0.6495631057790768,
+      "sup_f1": 0.6363636363636364,
+      "con_f1": 0.30952380952380953,
+      "nee_f1": 0.8045977011494253,
+      "confusion_matrix": [
+        [
+          63,
+          30,
+          20
+        ],
+        [
+          18,
+          13,
+          2
+        ],
+        [
+          4,
+          8,
+          70
+        ]
+      ]
+    },
+    {
+      "model": "Linear SVM",
+      "condition_key": "condition_c",
+      "condition_name": "Condition C: Claim + Evidence (Strict)",
+      "subset": "Synthetic-Negation Test",
+      "n_samples": 37,
+      "accuracy": 0.6486486486486487,
+      "macro_f1": 0.26229508196721313,
+      "weighted_f1": 0.7868852459016393,
+      "sup_f1": 0.0,
+      "con_f1": 0.7868852459016393,
+      "nee_f1": 0.0,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          24,
+          11
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "model": "Linear SVM",
+      "condition_key": "condition_c",
+      "condition_name": "Condition C: Claim + Evidence (Strict)",
+      "subset": "SCitance Test",
+      "n_samples": 93,
+      "accuracy": 0.4731182795698925,
+      "macro_f1": 0.4520417853751187,
+      "weighted_f1": 0.47501761480256105,
+      "sup_f1": 0.4074074074074074,
+      "con_f1": 0.6153846153846154,
+      "nee_f1": 0.3333333333333333,
+      "confusion_matrix": [
+        [
+          11,
+          11,
+          15
+        ],
+        [
+          2,
+          24,
+          11
+        ],
+        [
+          4,
+          6,
+          9
+        ]
+      ]
+    },
+    {
+      "model": "Linear SVM",
+      "condition_key": "condition_c",
+      "condition_name": "Condition C: Claim + Evidence (Strict)",
+      "subset": "SciFact Test",
+      "n_samples": 172,
+      "accuracy": 0.7325581395348837,
+      "macro_f1": 0.6772287261798297,
+      "weighted_f1": 0.7303180940454328,
+      "sup_f1": 0.7123287671232876,
+      "con_f1": 0.3880597014925373,
+      "nee_f1": 0.9312977099236641,
+      "confusion_matrix": [
+        [
+          52,
+          19,
+          5
+        ],
+        [
+          18,
+          13,
+          2
+        ],
+        [
+          0,
+          2,
+          61
+        ]
+      ]
+    },
+    {
+      "model": "Logistic Regression",
+      "condition_key": "condition_d",
+      "condition_name": "Condition D: Claim + Abstract Fallback",
+      "subset": "Combined Test",
+      "n_samples": 265,
+      "accuracy": 0.5358490566037736,
+      "macro_f1": 0.5248428611210566,
+      "weighted_f1": 0.5346263007023399,
+      "sup_f1": 0.5612244897959183,
+      "con_f1": 0.4027777777777778,
+      "nee_f1": 0.6105263157894737,
+      "confusion_matrix": [
+        [
+          55,
+          29,
+          29
+        ],
+        [
+          20,
+          29,
+          21
+        ],
+        [
+          8,
+          16,
+          58
+        ]
+      ]
+    },
+    {
+      "model": "Logistic Regression",
+      "condition_key": "condition_d",
+      "condition_name": "Condition D: Claim + Abstract Fallback",
+      "subset": "Natural-Only Test",
+      "n_samples": 228,
+      "accuracy": 0.543859649122807,
+      "macro_f1": 0.4952373933298939,
+      "weighted_f1": 0.5579088539288228,
+      "sup_f1": 0.5641025641025641,
+      "con_f1": 0.24719101123595505,
+      "nee_f1": 0.6744186046511628,
+      "confusion_matrix": [
+        [
+          55,
+          29,
+          29
+        ],
+        [
+          19,
+          11,
+          3
+        ],
+        [
+          8,
+          16,
+          58
+        ]
+      ]
+    },
+    {
+      "model": "Logistic Regression",
+      "condition_key": "condition_d",
+      "condition_name": "Condition D: Claim + Abstract Fallback",
+      "subset": "Synthetic-Negation Test",
+      "n_samples": 37,
+      "accuracy": 0.4864864864864865,
+      "macro_f1": 0.21818181818181817,
+      "weighted_f1": 0.6545454545454545,
+      "sup_f1": 0.0,
+      "con_f1": 0.6545454545454545,
+      "nee_f1": 0.0,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          18,
+          18
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "model": "Logistic Regression",
+      "condition_key": "condition_d",
+      "condition_name": "Condition D: Claim + Abstract Fallback",
+      "subset": "SCitance Test",
+      "n_samples": 93,
+      "accuracy": 0.40860215053763443,
+      "macro_f1": 0.3883136868211495,
+      "weighted_f1": 0.38500561225645485,
+      "sup_f1": 0.2222222222222222,
+      "con_f1": 0.5373134328358209,
+      "nee_f1": 0.40540540540540543,
+      "confusion_matrix": [
+        [
+          5,
+          10,
+          22
+        ],
+        [
+          1,
+          18,
+          18
+        ],
+        [
+          2,
+          2,
+          15
+        ]
+      ]
+    },
+    {
+      "model": "Logistic Regression",
+      "condition_key": "condition_d",
+      "condition_name": "Condition D: Claim + Abstract Fallback",
+      "subset": "SciFact Test",
+      "n_samples": 172,
+      "accuracy": 0.6046511627906976,
+      "macro_f1": 0.5631150838960841,
+      "weighted_f1": 0.6189918244657566,
+      "sup_f1": 0.6622516556291391,
+      "con_f1": 0.2857142857142857,
+      "nee_f1": 0.7413793103448276,
+      "confusion_matrix": [
+        [
+          50,
+          19,
+          7
+        ],
+        [
+          19,
+          11,
+          3
+        ],
+        [
+          6,
+          14,
+          43
+        ]
+      ]
+    },
+    {
+      "model": "Linear SVM",
+      "condition_key": "condition_d",
+      "condition_name": "Condition D: Claim + Abstract Fallback",
+      "subset": "Combined Test",
+      "n_samples": 265,
+      "accuracy": 0.5283018867924528,
+      "macro_f1": 0.5209869410292982,
+      "weighted_f1": 0.5321350229146861,
+      "sup_f1": 0.5786802030456852,
+      "con_f1": 0.423841059602649,
+      "nee_f1": 0.5604395604395604,
+      "confusion_matrix": [
+        [
+          57,
+          27,
+          29
+        ],
+        [
+          18,
+          32,
+          20
+        ],
+        [
+          9,
+          22,
+          51
+        ]
+      ]
+    },
+    {
+      "model": "Linear SVM",
+      "condition_key": "condition_d",
+      "condition_name": "Condition D: Claim + Abstract Fallback",
+      "subset": "Natural-Only Test",
+      "n_samples": 228,
+      "accuracy": 0.5307017543859649,
+      "macro_f1": 0.4911662272564528,
+      "weighted_f1": 0.550206043132438,
+      "sup_f1": 0.5816326530612245,
+      "con_f1": 0.2736842105263158,
+      "nee_f1": 0.6181818181818182,
+      "confusion_matrix": [
+        [
+          57,
+          27,
+          29
+        ],
+        [
+          17,
+          13,
+          3
+        ],
+        [
+          9,
+          22,
+          51
+        ]
+      ]
+    },
+    {
+      "model": "Linear SVM",
+      "condition_key": "condition_d",
+      "condition_name": "Condition D: Claim + Abstract Fallback",
+      "subset": "Synthetic-Negation Test",
+      "n_samples": 37,
+      "accuracy": 0.5135135135135135,
+      "macro_f1": 0.2261904761904762,
+      "weighted_f1": 0.6785714285714286,
+      "sup_f1": 0.0,
+      "con_f1": 0.6785714285714286,
+      "nee_f1": 0.0,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          19,
+          17
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "model": "Linear SVM",
+      "condition_key": "condition_d",
+      "condition_name": "Condition D: Claim + Abstract Fallback",
+      "subset": "SCitance Test",
+      "n_samples": 93,
+      "accuracy": 0.44086021505376344,
+      "macro_f1": 0.4326599326599327,
+      "weighted_f1": 0.4411317475833605,
+      "sup_f1": 0.3333333333333333,
+      "con_f1": 0.5757575757575758,
+      "nee_f1": 0.3888888888888889,
+      "confusion_matrix": [
+        [
+          8,
+          7,
+          22
+        ],
+        [
+          1,
+          19,
+          17
+        ],
+        [
+          2,
+          3,
+          14
+        ]
+      ]
+    },
+    {
+      "model": "Linear SVM",
+      "condition_key": "condition_d",
+      "condition_name": "Condition D: Claim + Abstract Fallback",
+      "subset": "SciFact Test",
+      "n_samples": 172,
+      "accuracy": 0.5755813953488372,
+      "macro_f1": 0.5454425821579395,
+      "weighted_f1": 0.595712284942355,
+      "sup_f1": 0.6577181208053692,
+      "con_f1": 0.3058823529411765,
+      "nee_f1": 0.6727272727272727,
+      "confusion_matrix": [
+        [
+          49,
+          20,
+          7
+        ],
+        [
+          17,
+          13,
+          3
+        ],
+        [
+          7,
+          19,
+          37
+        ]
+      ]
+    },
+    {
+      "model": "Logistic Regression",
+      "condition_key": "condition_e",
+      "condition_name": "Condition E: Full Standardized Input",
+      "subset": "Combined Test",
+      "n_samples": 265,
+      "accuracy": 0.5169811320754717,
+      "macro_f1": 0.5048959017764103,
+      "weighted_f1": 0.5155134627751897,
+      "sup_f1": 0.5463917525773195,
+      "con_f1": 0.3776223776223776,
+      "nee_f1": 0.5906735751295337,
+      "confusion_matrix": [
+        [
+          53,
+          28,
+          32
+        ],
+        [
+          21,
+          27,
+          22
+        ],
+        [
+          7,
+          18,
+          57
+        ]
+      ]
+    },
+    {
+      "model": "Logistic Regression",
+      "condition_key": "condition_e",
+      "condition_name": "Condition E: Full Standardized Input",
+      "subset": "Natural-Only Test",
+      "n_samples": 228,
+      "accuracy": 0.5263157894736842,
+      "macro_f1": 0.47637143761472006,
+      "weighted_f1": 0.5403598440084045,
+      "sup_f1": 0.5492227979274611,
+      "con_f1": 0.2247191011235955,
+      "nee_f1": 0.6551724137931034,
+      "confusion_matrix": [
+        [
+          53,
+          28,
+          32
+        ],
+        [
+          20,
+          10,
+          3
+        ],
+        [
+          7,
+          18,
+          57
+        ]
+      ]
+    },
+    {
+      "model": "Logistic Regression",
+      "condition_key": "condition_e",
+      "condition_name": "Condition E: Full Standardized Input",
+      "subset": "Synthetic-Negation Test",
+      "n_samples": 37,
+      "accuracy": 0.4594594594594595,
+      "macro_f1": 0.20987654320987656,
+      "weighted_f1": 0.6296296296296297,
+      "sup_f1": 0.0,
+      "con_f1": 0.6296296296296297,
+      "nee_f1": 0.0,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          17,
+          19
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "model": "Logistic Regression",
+      "condition_key": "condition_e",
+      "condition_name": "Condition E: Full Standardized Input",
+      "subset": "SCitance Test",
+      "n_samples": 93,
+      "accuracy": 0.3978494623655914,
+      "macro_f1": 0.38001199580146955,
+      "weighted_f1": 0.3771620255491223,
+      "sup_f1": 0.2222222222222222,
+      "con_f1": 0.5230769230769231,
+      "nee_f1": 0.39473684210526316,
+      "confusion_matrix": [
+        [
+          5,
+          9,
+          23
+        ],
+        [
+          1,
+          17,
+          19
+        ],
+        [
+          2,
+          2,
+          15
+        ]
+      ]
+    },
+    {
+      "model": "Logistic Regression",
+      "condition_key": "condition_e",
+      "condition_name": "Condition E: Full Standardized Input",
+      "subset": "SciFact Test",
+      "n_samples": 172,
+      "accuracy": 0.5813953488372093,
+      "macro_f1": 0.5395514254574657,
+      "weighted_f1": 0.5968532014263246,
+      "sup_f1": 0.6442953020134228,
+      "con_f1": 0.2564102564102564,
+      "nee_f1": 0.717948717948718,
+      "confusion_matrix": [
+        [
+          48,
+          19,
+          9
+        ],
+        [
+          20,
+          10,
+          3
+        ],
+        [
+          5,
+          16,
+          42
+        ]
+      ]
+    },
+    {
+      "model": "Linear SVM",
+      "condition_key": "condition_e",
+      "condition_name": "Condition E: Full Standardized Input",
+      "subset": "Combined Test",
+      "n_samples": 265,
+      "accuracy": 0.5358490566037736,
+      "macro_f1": 0.5292935395700775,
+      "weighted_f1": 0.5368516672192557,
+      "sup_f1": 0.5628140703517588,
+      "con_f1": 0.4489795918367347,
+      "nee_f1": 0.5760869565217391,
+      "confusion_matrix": [
+        [
+          56,
+          26,
+          31
+        ],
+        [
+          19,
+          33,
+          18
+        ],
+        [
+          11,
+          18,
+          53
+        ]
+      ]
+    },
+    {
+      "model": "Linear SVM",
+      "condition_key": "condition_e",
+      "condition_name": "Condition E: Full Standardized Input",
+      "subset": "Natural-Only Test",
+      "n_samples": 228,
+      "accuracy": 0.5350877192982456,
+      "macro_f1": 0.49516594516594514,
+      "weighted_f1": 0.549081668818511,
+      "sup_f1": 0.5656565656565656,
+      "con_f1": 0.28888888888888886,
+      "nee_f1": 0.6309523809523809,
+      "confusion_matrix": [
+        [
+          56,
+          26,
+          31
+        ],
+        [
+          18,
+          13,
+          2
+        ],
+        [
+          11,
+          18,
+          53
+        ]
+      ]
+    },
+    {
+      "model": "Linear SVM",
+      "condition_key": "condition_e",
+      "condition_name": "Condition E: Full Standardized Input",
+      "subset": "Synthetic-Negation Test",
+      "n_samples": 37,
+      "accuracy": 0.5405405405405406,
+      "macro_f1": 0.23391812865497075,
+      "weighted_f1": 0.7017543859649122,
+      "sup_f1": 0.0,
+      "con_f1": 0.7017543859649122,
+      "nee_f1": 0.0,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          20,
+          16
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "model": "Linear SVM",
+      "condition_key": "condition_e",
+      "condition_name": "Condition E: Full Standardized Input",
+      "subset": "SCitance Test",
+      "n_samples": 93,
+      "accuracy": 0.44086021505376344,
+      "macro_f1": 0.4290382819794584,
+      "weighted_f1": 0.43807415439293995,
+      "sup_f1": 0.3333333333333333,
+      "con_f1": 0.5714285714285714,
+      "nee_f1": 0.38235294117647056,
+      "confusion_matrix": [
+        [
+          8,
+          9,
+          20
+        ],
+        [
+          1,
+          20,
+          16
+        ],
+        [
+          2,
+          4,
+          13
+        ]
+      ]
+    },
+    {
+      "model": "Linear SVM",
+      "condition_key": "condition_e",
+      "condition_name": "Condition E: Full Standardized Input",
+      "subset": "SciFact Test",
+      "n_samples": 172,
+      "accuracy": 0.5872093023255814,
+      "macro_f1": 0.5543596998267014,
+      "weighted_f1": 0.5983082197652796,
+      "sup_f1": 0.6357615894039735,
+      "con_f1": 0.33766233766233766,
+      "nee_f1": 0.6896551724137931,
+      "confusion_matrix": [
+        [
+          48,
+          17,
+          11
+        ],
+        [
+          18,
+          13,
+          2
+        ],
+        [
+          9,
+          14,
+          40
+        ]
+      ]
+    }
+  ],
+  "total_errors": 95,
+  "total_test": 265,
+  "fallback_count": 416
+}

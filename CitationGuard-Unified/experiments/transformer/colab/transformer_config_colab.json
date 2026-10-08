@@ -1,0 +1,63 @@
+{
+  "project": "CitationGuard AI",
+  "phase": 5,
+  "task": "3-Class Citation/Claim Verification",
+  "labels": ["SUPPORTED", "CONTRADICTED", "NOT_ENOUGH_EVIDENCE"],
+  "label_to_id": {
+    "SUPPORTED": 0,
+    "CONTRADICTED": 1,
+    "NOT_ENOUGH_EVIDENCE": 2
+  },
+  "model_backbone": "microsoft/BiomedNLP-PubMedBERT-base-uncased-abstract",
+  "seed": 42,
+  "hyperparameters": {
+    "max_seq_length": 512,
+    "batch_size": 8,
+    "learning_rate": 2e-5,
+    "weight_decay": 0.01,
+    "epochs": 3,
+    "warmup_ratio": 0.1,
+    "mixed_precision": "fp16",
+    "gradient_accumulation_steps": 2,
+    "early_stopping_metric": "dev_macro_f1"
+  },
+  "grid_options": {
+    "learning_rate": [2e-5, 3e-5],
+    "batch_size": [8, 16],
+    "epochs": [3, 4]
+  },
+  "dataset": {
+    "expected_total": 1754,
+    "expected_splits": {
+      "TRAIN": 1226,
+      "DEV": 263,
+      "TEST": 265
+    },
+    "expected_labels": {
+      "SUPPORTED": 706,
+      "CONTRADICTED": 488,
+      "NOT_ENOUGH_EVIDENCE": 560
+    },
+    "expected_sources": {
+      "SCitance": 649,
+      "SciFact": 1105
+    }
+  },
+  "baseline_reference_phase4": {
+    "model": "TF-IDF (10k n-grams) + Logistic Regression",
+    "condition": "Claim + Strict Evidence (Condition C)",
+    "dev_macro_f1": 0.6625,
+    "test_macro_f1": 0.6754,
+    "test_accuracy": 0.6717,
+    "test_weighted_f1": 0.6765
+  },
+  "local_cpu_run_observation": {
+    "epoch": 1,
+    "train_loss": 0.8415,
+    "train_accuracy": 0.5294,
+    "dev_loss": 0.6277,
+    "dev_accuracy": 0.6768,
+    "dev_macro_f1": 0.6725,
+    "note": "Preliminary development checkpoint on CPU before Colab migration. Exceeded Phase 4 DEV Macro-F1 (0.6625) in 1 epoch."
+  }
+}

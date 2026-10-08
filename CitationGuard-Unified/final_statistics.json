@@ -1,0 +1,92 @@
+{
+  "project": "CitationGuard AI",
+  "phase": "Phase 2 - Unified Master Dataset Creation",
+  "total_master_records": 15525,
+  "total_verification_records": 1754,
+  "records_per_dataset": {
+    "SCitance": 649,
+    "SciFact": 1409,
+    "MSVEC": 56,
+    "SciCite": 11020,
+    "SciClaim": 2391
+  },
+  "records_per_task_type": {
+    "citation_verification": 649,
+    "scientific_claim_verification": 1409,
+    "external_robustness_verification": 56,
+    "citation_intent": 11020,
+    "sentence_role_detection": 2391
+  },
+  "records_per_original_label": {
+    "SUPPORT": 726,
+    "CONTRADICT": 505,
+    "NO_EVIDENCE": 583,
+    "UNLABELED": 300,
+    "background": 6375,
+    "method": 3154,
+    "result": 1491,
+    "0": 1129,
+    "2": 571,
+    "1": 691
+  },
+  "records_per_normalized_label": {
+    "SUPPORTED": 726,
+    "CONTRADICTED": 505,
+    "NOT_ENOUGH_EVIDENCE": 583,
+    "UNLABELED": 300,
+    "background": 6375,
+    "method": 3154,
+    "result": 1491,
+    "none": 1129,
+    "evidence": 571,
+    "claim": 691
+  },
+  "records_per_verification_label": {
+    "SUPPORTED": 726,
+    "CONTRADICTED": 505,
+    "NOT_ENOUGH_EVIDENCE": 583
+  },
+  "guard_split_counts": {
+    "TRAIN": 11130,
+    "TEST": 2450,
+    "DEV": 1589,
+    "TEST_UNLABELED": 300,
+    "EXTERNAL_TEST": 56
+  },
+  "verification_guard_split_counts": {
+    "TRAIN": 1226,
+    "TEST": 265,
+    "DEV": 263
+  },
+  "synthetic_vs_natural": {
+    "NATURAL": 15274,
+    "SYNTHETIC_NEGATION": 251
+  },
+  "verification_synthetic_vs_natural": {
+    "NATURAL": 1503,
+    "SYNTHETIC_NEGATION": 251
+  },
+  "duplicate_status_counts": {
+    "UNIQUE": 15380,
+    "SOURCE_OVERLAP": 43,
+    "EXACT_DUPLICATE": 102
+  },
+  "metadata_repair": {
+    "total_scitance_docs": 435,
+    "repaired_titles": 435,
+    "unmatched_titles": 0
+  },
+  "leakage_prevention": {
+    "exact_duplicates_marked": 102,
+    "source_overlaps_flagged": 0,
+    "near_duplicates_flagged": 25,
+    "total_paper_components": 603,
+    "train_components": 417,
+    "dev_components": 89,
+    "test_components": 97,
+    "train_documents": 417,
+    "dev_documents": 89,
+    "test_documents": 97,
+    "cross_split_document_overlap": 0
+  }
+}

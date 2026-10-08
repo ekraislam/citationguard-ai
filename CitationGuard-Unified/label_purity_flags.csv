@@ -1,0 +1,4 @@
+record_id,source_dataset,source_record_id,guard_split,verification_label,synthetic_or_natural,flags,evidence_status,claim_snippet
+CG_001069,SciFact,726,TRAIN,SUPPORTED,NATURAL,EMPTY_EVIDENCE_FOR_ATTRIBUTED_LABEL; SENTENCE_IDS_EXIST_BUT_EVIDENCE_TEXT_EMPTY,EMPTY,Ly6C hi monocytes have a higher inflammatory capacity than L
+CG_001211,SciFact,977,TEST,SUPPORTED,NATURAL,EMPTY_EVIDENCE_FOR_ATTRIBUTED_LABEL; SENTENCE_IDS_EXIST_BUT_EVIDENCE_TEXT_EMPTY,EMPTY,Pro-inflammatory cytokines are up regulated during tumor dev
+CG_001616,SciFact,728,TRAIN,CONTRADICTED,NATURAL,EMPTY_EVIDENCE_FOR_ATTRIBUTED_LABEL; SENTENCE_IDS_EXIST_BUT_EVIDENCE_TEXT_EMPTY,EMPTY,Ly6C hi monocytes have a lower inflammatory capacity than Ly

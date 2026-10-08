@@ -1,0 +1,67 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyTorch & HuggingFace Models / Large Checkpoints (>100MB blocked by GitHub)
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.ckpt
+*.onnx
+*.h5
+
+# SciCite Unused Raw Scaffold Dumps (>140MB raw third-party pretraining data)
+**/scaffolds/
+scicite/scicite/scaffolds/
+
+# Upstream MSVEC GPT-3.5 scripts (contains leaked third-party OpenAI keys)
+**/gpt-3.5/
+msvec-main/msvec-main/gpt-3.5/
+
+# Virtual Environments
+venv/
+.venv/
+env/
+ENV/
+
+# macOS & OS artifacts
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE & Editor artifacts
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Temporary / scratch scripts & logs
+*.log
+scratch/

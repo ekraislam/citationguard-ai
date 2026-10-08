@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CitationGuard AI — Evidence-Aware Citation Verification</title>
+    <meta name="description" content="A scholarly workbench for examining citation veracity and empirical grounding in scientific literature using fine-tuned PubMedBERT.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="app-layout">
+        <!-- GLOBAL SCHOLARLY HEADER -->
+        <header class="app-header">
+            <div class="header-inner">
+                <div class="brand-cluster">
+                    <div class="brand-mark" aria-hidden="true">
+                        <!-- Book & Quill Emblem -->
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                            <path d="M12 6h4"></path>
+                            <path d="M12 10h4"></path>
+                        </svg>
+                    </div>
+                    <div class="brand-text">
+                        <div class="brand-title-row">
+                            <h1 class="brand-name">CitationGuard<span class="brand-accent">AI</span></h1>
+                        </div>
+                        <p class="brand-subtext">A scholarly companion for examining citation veracity and empirical evidence</p>
+                    </div>
+                </div>
+
+                <div class="header-controls">
+                    <!-- Humane Engine Status -->
+                    <div class="status-pill" id="statusPill" title="Local PubMedBERT checkpoint status">
+                        <span class="status-dot"></span>
+                        <span class="status-label" id="statusLabel">Reading Engine Ready</span>
+                    </div>
+
+                    <!-- Architecture & Archive Modal -->
+                    <button type="button" class="action-btn-ghost" id="openSpecsBtn" title="Inspect model architecture, parameters, and benchmark rules">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="16" x2="12" y2="12"></line>
+                            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                        </svg>
+                        <span>Archive & Specs</span>
+                    </button>
+
+                    <!-- Theme Toggle Switch (☀️ / 🌙) -->
+                    <button type="button" class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle visual theme" title="Switch between Warm Ivory and Dark Obsidian">
+                        <svg class="sun-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                        <svg class="moon-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- MAIN WORKBENCH -->
+        <main class="main-workspace">
+            <div class="workspace-grid">
+                
+                <!-- LEFT COLUMN: THE SCHOLAR'S WORKBENCH -->
+                <section class="card input-card">
+                    <div class="card-header">
+                        <div class="header-title-wrap">
+                            <h2 class="card-title">Citation Workbench</h2>
+                            <p class="card-subtitle">Place a factual assertion and its cited text side-by-side to examine grounding</p>
+                        </div>
+                    </div>
+
+                    <!-- STUDY CASES / PRESETS -->
+                    <div class="presets-row">
+                        <span class="presets-label">Study cases:</span>
+                        <div class="preset-chips" id="presetsChips">
+                            <button type="button" class="preset-chip" data-sample="0" title="Examine: Deep straw burial decomposition">
+                                <span class="chip-indicator ind-sup"></span>
+                                <span>Soil Straw Burial</span>
+                            </button>
+                            <button type="button" class="preset-chip" data-sample="1" title="Examine: Lignin degradation mechanisms">
+                                <span class="chip-indicator ind-con"></span>
+                                <span>Lignin Degradation</span>
+                            </button>
+                            <button type="button" class="preset-chip" data-sample="2" title="Examine: CRISPR chromosomal inversions">
+                                <span class="chip-indicator ind-nee"></span>
+                                <span>CRISPR Inversions</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- FORM -->
+                    <form id="verifyForm" class="verification-form">
+                        <!-- Field 1: Scientific Proposition -->
+                        <div class="form-field">
+                            <label for="claimInput" class="field-label">
+                                Scientific Proposition or Claim <span class="required-star">*</span>
+                            </label>
+                            <textarea 
+                                id="claimInput" 
+                                name="claim" 
+                                rows="3" 
+                                class="text-input textarea-claim"
+                                placeholder="Enter the factual statement or hypothesis being asserted in the paper..." 
+                                required></textarea>
+                        </div>
+
+                        <!-- Field 2: Cited Publication Title -->
+                        <div class="form-field">
+                            <label for="titleInput" class="field-label">
+                                Cited Publication Title <span class="optional-tag">(optional source)</span>
+                            </label>
+                            <input 
+                                type="text" 
+                                id="titleInput" 
+                                name="title" 
+                                class="text-input"
+                                placeholder="e.g., Deep Straw Burial Accelerates Straw Decomposition and Soil Respiration...">
+                        </div>
+
+                        <!-- Field 3: Cited Excerpt / Evidence Context -->
+                        <div class="form-field">
+                            <label for="evidenceInput" class="field-label">
+                                Cited Excerpt or Empirical Evidence <span class="optional-tag">(optional passage)</span>
+                            </label>
+                            <textarea 
+                                id="evidenceInput" 
+                                name="evidence" 
+                                rows="4" 
+                                class="text-input textarea-evidence"
+                                placeholder="Paste the cited sentence or abstract excerpt from the referenced study (or leave empty to evaluate isolated proposition)..."></textarea>
+                        </div>
+
+                        <!-- Tactile Actions -->
+                        <div class="form-actions">
+                            <button type="submit" id="submitBtn" class="btn btn-primary">
+                                <span class="btn-spinner" id="btnSpinner" aria-hidden="true"></span>
+                                <span id="btnText">Examine Citation</span>
+                                <kbd class="kbd-shortcut">Ctrl+Enter</kbd>
+                            </button>
+                            <button type="button" id="clearBtn" class="btn btn-ghost">
+                                Reset Workbench
+                            </button>
+                        </div>
+                    </form>
+                </section>
+
+                <!-- RIGHT COLUMN: SCHOLARLY ASSESSMENT & REASONING -->
+                <section class="card outcome-card" id="outcomeCard">
+                    <div class="card-header">
+                        <div class="header-title-wrap">
+                            <h2 class="card-title">Scholarly Assessment</h2>
+                            <p class="card-subtitle">Empirical alignment, calibrated certainty, and contextual reasoning</p>
+                        </div>
+                    </div>
+
+                    <!-- 1. EMPTY EDITORIAL STATE (Warm, Literary, Bookish) -->
+                    <div class="empty-state" id="emptyState">
+                        <div class="empty-illustration">
+                            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+                            </svg>
+                        </div>
+                        <h3 class="empty-title">Every claim deserves to be read alongside its source.</h3>
+                        <p class="empty-description">
+                            When academic writing cites evidence, it makes a promise of factual grounding. Place a proposition and its cited passage on the left, and CitationGuard will carefully read their alignment.
+                        </p>
+                        <div class="empty-guidance">
+                            <div class="guidance-item">
+                                <span class="guidance-dot dot-sup"></span>
+                                <div>
+                                    <strong>Supported</strong>
+                                    <p>The cited text stands behind the proposition and actively substantiates it.</p>
+                                </div>
+                            </div>
+                            <div class="guidance-item">
+                                <span class="guidance-dot dot-con"></span>
+                                <div>
+                                    <strong>Contradicted</strong>
+                                    <p>The cited findings point in the opposite direction or refute the assertion.</p>
+                                </div>
+                            </div>
+                            <div class="guidance-item">
+                                <span class="guidance-dot dot-nee"></span>
+                                <div>
+                                    <strong>Inconclusive / Not Enough Evidence</strong>
+                                    <p>The passage is silent, distant, or lacks informative empirical findings.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. LOADING STATE (Gentle Scholarly Reading) -->
+                    <div class="loading-state" id="loadingState" style="display: none;">
+                        <div class="loading-pulse-ring"></div>
+                        <h3 class="loading-title">Reading through passage with care...</h3>
+                        <p class="loading-description">Weighing cross-segment attention and tracing biomedical relationships with PubMedBERT.</p>
+                    </div>
+
+                    <!-- 3. RESULTS STATE (Warm, Human, Transparent Reasoning) -->
+                    <div class="results-container" id="resultsContainer" style="display: none;">
+                        
+                        <!-- VERDICT HERO CARD -->
+                        <div class="verdict-card" id="verdictCard">
+                            <div class="verdict-main">
+                                <span class="verdict-caption">Evaluated Verdict</span>
+                                <h3 class="verdict-name" id="verdictLabel">SUPPORTED</h3>
+                                <p class="verdict-interpretation" id="verdictDescription">
+                                    The cited excerpt provides direct empirical backing. The literature stands in clear harmony with the proposition.
+                                </p>
+                            </div>
+                            <div class="verdict-stat-pill">
+                                <div class="stat-number" id="confidenceValue">0.0%</div>
+                                <div class="stat-label">Certainty</div>
+                            </div>
+                        </div>
+
+                        <!-- CLASS PROBABILITY SPECTRUM -->
+                        <div class="distribution-block">
+                            <h4 class="distribution-title">Class Probability Spectrum</h4>
+                            
+                            <!-- Supported -->
+                            <div class="dist-row">
+                                <div class="dist-header">
+                                    <div class="dist-label-wrap">
+                                        <span class="dist-dot dot-sup"></span>
+                                        <span class="dist-name">SUPPORTED</span>
+                                    </div>
+                                    <span class="dist-pct" id="probSupVal">0.0%</span>
+                                </div>
+                                <div class="dist-track">
+                                    <div class="dist-fill fill-sup" id="probSupBar" style="width: 0%;"></div>
+                                </div>
+                            </div>
+
+                            <!-- Contradicted -->
+                            <div class="dist-row">
+                                <div class="dist-header">
+                                    <div class="dist-label-wrap">
+                                        <span class="dist-dot dot-con"></span>
+                                        <span class="dist-name">CONTRADICTED</span>
+                                    </div>
+                                    <span class="dist-pct" id="probConVal">0.0%</span>
+                                </div>
+                                <div class="dist-track">
+                                    <div class="dist-fill fill-con" id="probConBar" style="width: 0%;"></div>
+                                </div>
+                            </div>
+
+                            <!-- Not Enough Evidence -->
+                            <div class="dist-row">
+                                <div class="dist-header">
+                                    <div class="dist-label-wrap">
+                                        <span class="dist-dot dot-nee"></span>
+                                        <span class="dist-name">NOT ENOUGH EVIDENCE</span>
+                                    </div>
+                                    <span class="dist-pct" id="probNeeVal">0.0%</span>
+                                </div>
+                                <div class="dist-track">
+                                    <div class="dist-fill fill-nee" id="probNeeBar" style="width: 0%;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SCHOLARLY OBSERVATION & REASONING (Human-like reasoning note) -->
+                        <div class="scholarly-note-card" id="scholarlyNoteCard">
+                            <div class="note-header">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                                <span>Scholarly Note on Decision</span>
+                            </div>
+                            <p class="note-body" id="scholarlyNoteText">
+                                Examining citation alignment...
+                            </p>
+                        </div>
+
+                        <!-- CONTEXTUAL INSIGHT STRIP (Quiet, balanced footnote) -->
+                        <div class="insight-strip" id="insightStrip">
+                            <div class="insight-item">
+                                <span class="insight-label">Context Condition</span>
+                                <span class="insight-val" id="insightEvidence">Literature Context</span>
+                            </div>
+                            <div class="insight-sep"></div>
+                            <div class="insight-item">
+                                <span class="insight-label">Confidence Grade</span>
+                                <span class="insight-val" id="insightConfidenceGrade">High Certainty</span>
+                            </div>
+                        </div>
+
+                        <!-- SCHOLARLY EXPORT & PDF ACTIONS -->
+                        <div class="scholarly-actions">
+                            <button type="button" class="btn-brief-action" id="copyBriefBtn" title="Copy peer-review audit brief in formatted Markdown">
+                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                </svg>
+                                <span>Copy Audit Brief</span>
+                            </button>
+                            <button type="button" class="btn-brief-action" id="printReportBtn" title="Print publication-grade verification certificate or save as PDF">
+                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                                    <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                                    <rect x="6" y="14" width="12" height="8"></rect>
+                                </svg>
+                                <span>Print / Save PDF</span>
+                            </button>
+                        </div>
+
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- HUMAN CRAFTSMAN FOOTER -->
+        <footer class="app-footer">
+            <div class="footer-inner">
+                <div class="footer-text">
+                    <span>Crafted with devotion to academic truth and evidence-based inquiry &bull; <strong>CitationGuard AI</strong></span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- PRINTABLE AUDIT CERTIFICATE (STRICTLY 1-PAGE GUARANTEE) -->
+    <div id="printDocument" class="print-document" style="display: none;">
+        <!-- Institutional Masthead -->
+        <div class="print-header">
+            <div class="print-brand">
+                <h1 class="print-brand-title">CITATIONGUARD AI</h1>
+                <p class="print-brand-sub">Evidence-Aware Scientific Citation Verification &bull; Peer-Review Audit Certificate</p>
+            </div>
+            <div class="print-seal">
+                <div class="seal-line"><strong>RECORD ID:</strong> CG-AUDIT-<span id="printAuditId">0000</span></div>
+                <div class="seal-line"><strong>DATE:</strong> <span id="printMetaDate">October 9, 2026</span></div>
+                <div class="seal-line"><strong>PROTOCOL:</strong> Strict Context Isolation</div>
+            </div>
+        </div>
+
+        <div class="print-rule"></div>
+
+        <!-- Section 1: Proposition & Literature Context (Side-by-Side 2-Column Duo) -->
+        <div class="print-grid-duo">
+            <div class="print-col">
+                <h3 class="print-sec-label">1. Proposition Under Review</h3>
+                <div class="print-box-content">
+                    <p class="print-text-claim" id="printProposition">--</p>
+                </div>
+            </div>
+            <div class="print-col">
+                <h3 class="print-sec-label">2. Cited Reference Context</h3>
+                <div class="print-box-content">
+                    <p class="print-text-title"><strong>Publication:</strong> <span id="printPublication">--</span></p>
+                    <p class="print-text-excerpt"><strong>Cited Excerpt:</strong> <span id="printExcerpt">--</span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2: Evaluated Scientific Verdict (Hero Block) -->
+        <div class="print-verdict-banner" id="printVerdictBanner">
+            <div class="print-verdict-left">
+                <span class="print-verdict-eyebrow">Evaluated Scientific Stance</span>
+                <h2 class="print-verdict-name" id="printVerdictLabel">SUPPORTED</h2>
+                <p class="print-verdict-desc" id="printVerdictDesc">--</p>
+            </div>
+            <div class="print-verdict-right">
+                <div class="print-cert-score" id="printVerdictCertainty">90.1%</div>
+                <div class="print-cert-sub">Calibrated Certainty</div>
+            </div>
+        </div>
+
+        <!-- Section 3: Probability Spectrum & Scholarly Reasoning (Side-by-Side Split) -->
+        <div class="print-grid-duo print-analysis-row">
+            <!-- Left Column: Probability Table -->
+            <div class="print-col">
+                <h3 class="print-sec-label">3. Class Probability Spectrum</h3>
+                <table class="print-table">
+                    <thead>
+                        <tr>
+                            <th>Classification Stance</th>
+                            <th style="text-align: right;">Probability</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="print-dot-sup">&bull;</span> Supported</td>
+                            <td style="text-align: right; font-weight: 600;" id="printProbSup">--%</td>
+                        </tr>
+                        <tr>
+                            <td><span class="print-dot-con">&bull;</span> Contradicted</td>
+                            <td style="text-align: right; font-weight: 600;" id="printProbCon">--%</td>
+                        </tr>
+                        <tr>
+                            <td><span class="print-dot-nee">&bull;</span> Not Enough Evidence</td>
+                            <td style="text-align: right; font-weight: 600;" id="printProbNee">--%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Right Column: Scholarly Reasoning Note -->
+            <div class="print-col">
+                <h3 class="print-sec-label">4. Scholarly Assessment Note</h3>
+                <div class="print-reasoning-card">
+                    <p class="print-reasoning-body" id="printReasoning">--</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="print-rule-subtle"></div>
+
+        <!-- Section 4: Provenance & Archival Footer -->
+        <div class="print-footer">
+            <div class="print-foot-meta">
+                <span><strong>Model Engine:</strong> fine-tuned BiomedNLP-PubMedBERT-base-uncased-abstract</span>
+                <span>&bull;</span>
+                <span><strong>Context Window:</strong> 512 Sequence Tokens</span>
+                <span>&bull;</span>
+                <span><strong>Dataset Standard:</strong> SciFact / BioASQ Unified Corpus</span>
+            </div>
+            <div class="print-foot-note">
+                This document certifies algorithmic semantic alignment evaluated by CitationGuard AI. Formatted for academic peer-review attachment and institutional archiving.
+            </div>
+        </div>
+    </div>
+
+    <!-- ARCHIVE & SPECIFICATIONS DIALOG -->
+    <div class="modal-backdrop" id="specsModal" style="display: none;">
+        <div class="modal-window">
+            <div class="modal-header">
+                <div>
+                    <h3 class="modal-title">Archive & Model Architecture</h3>
+                    <p class="modal-subtitle">Phase 5 Production PubMedBERT Strict Evidence Configuration</p>
+                </div>
+                <button type="button" class="modal-close-btn" id="closeSpecsBtn" aria-label="Close dialog">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="spec-grid">
+                    <div class="spec-tile">
+                        <span class="spec-tile-label">Base Architecture</span>
+                        <span class="spec-tile-value">BiomedNLP-PubMedBERT-base-uncased-abstract</span>
+                    </div>
+                    <div class="spec-tile">
+                        <span class="spec-tile-label">Classification Head</span>
+                        <span class="spec-tile-value">3-Class Softmax (Supported, Contradicted, Not Enough Ev)</span>
+                    </div>
+                    <div class="spec-tile">
+                        <span class="spec-tile-label">Context Window</span>
+                        <span class="spec-tile-value">512 Sequence Tokens</span>
+                    </div>
+                    <div class="spec-tile">
+                        <span class="spec-tile-label">Evidence Isolation</span>
+                        <span class="spec-tile-value">Strict Segment-Level Context Boundary</span>
+                    </div>
+                    <div class="spec-tile">
+                        <span class="spec-tile-label">Training Disciplines</span>
+                        <span class="spec-tile-value">SciFact, BioASQ, COVID-19 Claims Unified Corpus</span>
+                    </div>
+                    <div class="spec-tile">
+                        <span class="spec-tile-label">Checkpoint Check</span>
+                        <span class="spec-tile-value">models/best_checkpoint_strict (Read-Only)</span>
+                    </div>
+                </div>
+                <div class="modal-notice">
+                    <strong>Input Formatting Protocol:</strong>
+                    <code>Claim:\n{claim}\n\nTitle:\n{title}\n\nEvidence:\n{evidence or '[NO_EVIDENCE_PROVIDED]'}</code>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION -->
+    <div class="toast" id="toastNotice" style="display: none;"></div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>

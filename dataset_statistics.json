@@ -1,0 +1,883 @@
+{
+  "audit_metadata": {
+    "project_name": "CitationGuard AI",
+    "audit_phase": "Phase 1 - Comprehensive Multi-Dataset Audit",
+    "date": "2026-10-08",
+    "auditor": "CitationGuard Research Agent",
+    "datasets_audited": [
+      "SciClaim",
+      "SciFact",
+      "MSVEC",
+      "SciCite",
+      "SCitance"
+    ]
+  },
+  "datasets": {
+    "SciClaim": {
+      "dataset_name": "SciClaim Dataset",
+      "source_repository": "https://github.com/sciclaim/SciClaim-Dataset",
+      "paper_title": "Scientific Claim Recognition via Staged Fine-Tuning with LoRA",
+      "authors": "Xin Lin, Yajiao Wang, Zhixiong Zhang, et al.",
+      "venue": "Data Intelligence, 2025 (DOI: 10.3724/2096-7004.di.2025.0009)",
+      "domain": "Bio-agriculture (15 full-text papers)",
+      "original_task": "Sentence-level scientific claim and evidence recognition across full-text sections",
+      "unit_of_record": "Single sentence extracted from a full-text scientific paper",
+      "total_standard_records": 2391,
+      "total_files": 6,
+      "splits": {
+        "train": {
+          "papers": 11,
+          "sentences": 1657
+        },
+        "val": {
+          "papers": 2,
+          "sentences": 410
+        },
+        "test": {
+          "papers": 2,
+          "sentences": 324
+        }
+      },
+      "label_definitions": {
+        "1": "Claim (Abstract proposition expressing core findings, relationships, or comparisons)",
+        "2": "Evidence (Concrete experimental or theoretical support for claims)",
+        "0": "None-type (Contextual background, objectives, methods, future work)"
+      },
+      "label_distributions": {
+        "train": {
+          "0": 800,
+          "2": 375,
+          "1": 482
+        },
+        "val": {
+          "0": 167,
+          "1": 132,
+          "2": 111
+        },
+        "test": {
+          "1": 77,
+          "0": 162,
+          "2": 85
+        },
+        "test_withouT": {
+          "2": 83,
+          "0": 164,
+          "1": 77
+        }
+      },
+      "class_imbalance": {
+        "train": {
+          "None (0)": "48.28%",
+          "Claim (1)": "29.09%",
+          "Evidence (2)": "22.63%"
+        },
+        "val": {
+          "None (0)": "40.73%",
+          "Claim (1)": "32.20%",
+          "Evidence (2)": "27.07%"
+        },
+        "test": {
+          "None (0)": "50.00%",
+          "Evidence (2)": "26.23%",
+          "Claim (1)": "23.77%"
+        }
+      },
+      "files": {
+        "SciClaim_sentences_train.tsv": {
+          "file_size_bytes": 483745,
+          "record_count": 1657,
+          "columns": [
+            "label",
+            "text"
+          ],
+          "column_types": {
+            "label": "integer_string (0, 1, 2)",
+            "text": "string"
+          },
+          "missing_values": {
+            "label": 0,
+            "text": 0
+          },
+          "label_distribution": {
+            "0": 800,
+            "2": 375,
+            "1": 482
+          },
+          "unique_records": 1657,
+          "duplicate_records": 0,
+          "extracted_papers_count": 11,
+          "extracted_papers": [
+            "Cellulose-Degrading Strains: their Screening and Application to Corn Straw in Low-Temperature Environments",
+            "Characteristics of rice straw decomposition and bacterial community succession for 2 consecutive years in a paddy field in southeastern China",
+            "Co-Effects of Nitrogen Fertilizer and Straw-Decomposing Microbial Inoculant on Decomposition and Transformation of Field Composted Wheat Straw",
+            "Co-application of nitrogen and straw-decomposing microbial inoculant enhanced wheat straw decomposition and rice yield in a paddy soil",
+            "DECOMPOSITION AND CHEMICAL COMPOSITION OF CEREAL STRAW",
+            "Decomposition characteristics of rice straw returned to the soil in northeast China",
+            "Exogenous fibrolytic enzymes to unlock nutrients: Histological investigation of its effects on fibre degradation in ruminants",
+            "Hemicellulose pyrolysis mechanism based on functional group evolutions by two-dimensional perturbation correlation infrared spectroscopy",
+            "Insulating Organic Material as a Protection System against Late Frost Damages on the Vine Shoots",
+            "Novel automated method for evaluating the morphological changes of cellulose fibres during extrusion-compounding of plastic-matrix composites",
+            "Phylogenetic composition and properties of bacteria coexisting with the fungus Hypholoma fasciculare in decaying wood"
+          ],
+          "word_statistics": {
+            "min": 16,
+            "max": 146,
+            "mean": 40.91,
+            "median": 39,
+            "total_words": 67795
+          }
+        },
+        "SciClaim_sentences_val.tsv": {
+          "file_size_bytes": 118500,
+          "record_count": 410,
+          "columns": [
+            "label",
+            "text"
+          ],
+          "column_types": {
+            "label": "integer_string (0, 1, 2)",
+            "text": "string"
+          },
+          "missing_values": {
+            "label": 0,
+            "text": 0
+          },
+          "label_distribution": {
+            "0": 167,
+            "1": 132,
+            "2": 111
+          },
+          "unique_records": 390,
+          "duplicate_records": 20,
+          "extracted_papers_count": 2,
+          "extracted_papers": [
+            "Construction of in situ degradation bacteria of corn straw and analysis of its degradation efficiency",
+            "Deep Straw Burial Accelerates Straw Decomposition and Improves Soil Water Repellency"
+          ],
+          "word_statistics": {
+            "min": 15,
+            "max": 160,
+            "mean": 43.22,
+            "median": 40.0,
+            "total_words": 17722
+          }
+        },
+        "SciClaim_sentences_test.tsv": {
+          "file_size_bytes": 83070,
+          "record_count": 324,
+          "columns": [
+            "label",
+            "text"
+          ],
+          "column_types": {
+            "label": "integer_string (0, 1, 2)",
+            "text": "string"
+          },
+          "missing_values": {
+            "label": 0,
+            "text": 0
+          },
+          "label_distribution": {
+            "1": 77,
+            "0": 162,
+            "2": 85
+          },
+          "unique_records": 324,
+          "duplicate_records": 0,
+          "extracted_papers_count": 2,
+          "extracted_papers": [
+            "Characterization of a newly Isolated Bacterium Pandoraea sp. B-6 capable of degrading kraft Lignin",
+            "Decomposition rate of cereal straw as affected by soil placement"
+          ],
+          "word_statistics": {
+            "min": 17,
+            "max": 108,
+            "mean": 38.82,
+            "median": 37.0,
+            "total_words": 12578
+          }
+        },
+        "SciClaim_sentences_test_withouT.tsv": {
+          "file_size_bytes": 55678,
+          "record_count": 324,
+          "columns": [
+            "label",
+            "text"
+          ],
+          "column_types": {
+            "label": "integer_string (0, 1, 2)",
+            "text": "string"
+          },
+          "missing_values": {
+            "label": 0,
+            "text": 0
+          },
+          "label_distribution": {
+            "2": 83,
+            "0": 164,
+            "1": 77
+          },
+          "unique_records": 324,
+          "duplicate_records": 0,
+          "extracted_papers_count": 0,
+          "extracted_papers": [],
+          "word_statistics": {
+            "min": 7,
+            "max": 98,
+            "mean": 27.46,
+            "median": 25.0,
+            "total_words": 8898
+          }
+        }
+      },
+      "quality_anomalies": {
+        "test_file_label_discrepancy_count": 22,
+        "discrepancy_details": [
+          {
+            "row_index": 0,
+            "test_label": "1",
+            "test_withouT_label": "2",
+            "sentence_snippet": "A newly isolated bacterium was screened out for its survival on medium with 6 000 mg/L kraft lignin as the sole carbon s"
+          },
+          {
+            "row_index": 56,
+            "test_label": "1",
+            "test_withouT_label": "2",
+            "sentence_snippet": "AY268171.1), corresponding to the 16S rRNA sequence analysis result, biochemical properties of the strain confirms that "
+          },
+          {
+            "row_index": 88,
+            "test_label": "1",
+            "test_withouT_label": "0",
+            "sentence_snippet": "The reason may be due to the enzymes involved in degradation of ferulic acid can not occur where the cells growth is in "
+          },
+          {
+            "row_index": 90,
+            "test_label": "2",
+            "test_withouT_label": "1",
+            "sentence_snippet": "The results clearly demonstrate that high relative molecular mass lignin fragments are biodegradable by B-6, which is in"
+          },
+          {
+            "row_index": 102,
+            "test_label": "0",
+            "test_withouT_label": "1",
+            "sentence_snippet": "And the utility of B-6 could be extended to other biotechnological areas such as the pulp and paper industry, dyeing and"
+          }
+        ],
+        "validation_duplicate_texts_count": 20,
+        "synthetic_data": false,
+        "text_prefix_artifact": "Sentences in train/val/test are prefixed with '(title:<paper_title>) ' which must be parsed before NLP modeling"
+      }
+    },
+    "SciFact": {
+      "dataset_name": "SciFact",
+      "source_repository": "https://github.com/allenai/scifact",
+      "paper_title": "Fact or Fiction: Verifying Scientific Claims",
+      "authors": "David Wadden, Shanchuan Lin, Kyle Lo, Lu Wang, Madeleine van Zuylen, Arman Cohan, Hannaneh Hajishirzi",
+      "venue": "EMNLP 2020 (arXiv:2004.14974)",
+      "domain": "Biomedicine (claims derived from citation sentences in open-access biology papers)",
+      "original_task": "Scientific claim verification against literature abstracts (Document Retrieval + Sentence Rationale Selection + Stance Classification)",
+      "unit_of_record": "Claim record pairing a claim text with cited documents and sentence-level evidence annotations",
+      "total_claims": 1409,
+      "corpus_size": 5183,
+      "cross_validation_folds": 5,
+      "label_definitions": {
+        "SUPPORT": "Cited abstract contains rationale sentences that support the claim",
+        "CONTRADICT": "Cited abstract contains rationale sentences that refute/contradict the claim",
+        "NO_EVIDENCE": "Claim has no supporting or refuting rationale in candidate abstract"
+      },
+      "label_distributions": {
+        "claims_train.jsonl": {
+          "NO_EVIDENCE": 304,
+          "CONTRADICT": 341,
+          "SUPPORT": 616
+        },
+        "claims_dev.jsonl": {
+          "NO_EVIDENCE": 112,
+          "SUPPORT": 216,
+          "CONTRADICT": 122
+        },
+        "claims_test.jsonl": {
+          "NO_EVIDENCE": 300
+        }
+      },
+      "files": {
+        "claims_train.jsonl": {
+          "file_size_bytes": 175616,
+          "record_count": 809,
+          "fields": [
+            "id",
+            "claim",
+            "evidence",
+            "cited_doc_ids"
+          ],
+          "missing_fields": {},
+          "evidence_label_distribution": {
+            "NO_EVIDENCE": 304,
+            "CONTRADICT": 341,
+            "SUPPORT": 616
+          },
+          "unique_claims": 807,
+          "duplicate_claims": 2,
+          "word_statistics": {
+            "min": 3,
+            "max": 39,
+            "mean": 12.33,
+            "median": 12,
+            "total_words": 9977
+          }
+        },
+        "claims_dev.jsonl": {
+          "file_size_bytes": 65007,
+          "record_count": 300,
+          "fields": [
+            "id",
+            "claim",
+            "evidence",
+            "cited_doc_ids"
+          ],
+          "missing_fields": {},
+          "evidence_label_distribution": {
+            "NO_EVIDENCE": 112,
+            "SUPPORT": 216,
+            "CONTRADICT": 122
+          },
+          "unique_claims": 300,
+          "duplicate_claims": 0,
+          "word_statistics": {
+            "min": 4,
+            "max": 29,
+            "mean": 12.51,
+            "median": 12.0,
+            "total_words": 3752
+          }
+        },
+        "claims_test.jsonl": {
+          "file_size_bytes": 33769,
+          "record_count": 300,
+          "fields": [
+            "id",
+            "claim"
+          ],
+          "missing_fields": {
+            "evidence": 300,
+            "cited_doc_ids": 300
+          },
+          "evidence_label_distribution": {
+            "NO_EVIDENCE": 300
+          },
+          "unique_claims": 297,
+          "duplicate_claims": 3,
+          "word_statistics": {
+            "min": 4,
+            "max": 39,
+            "mean": 12.06,
+            "median": 12.0,
+            "total_words": 3618
+          }
+        },
+        "corpus.jsonl": {
+          "file_size_bytes": 8307875,
+          "total_documents": 5183,
+          "fields": [
+            "doc_id",
+            "title",
+            "abstract",
+            "structured"
+          ],
+          "unique_doc_ids": 5183,
+          "unique_titles": 5181,
+          "structured_abstract_count": 977,
+          "unstructured_abstract_count": 4206,
+          "total_abstract_sentences": 45952,
+          "mean_sentences_per_abstract": 8.87
+        }
+      },
+      "quality_anomalies": {
+        "train_internal_duplicates": [
+          "Adult tissue-resident macrophages are seeded before birth.",
+          "Adult tissue-resident macrophages stem from the embryonal yolk sac and fetal liver."
+        ],
+        "test_internal_duplicates": [
+          "Hematopoietic progenitor cells are never susceptible to HIV-1 infection ex vivo.",
+          "Obesity decreases life expectancy.",
+          "Obesity prolongs life expectancy."
+        ],
+        "train_dev_cross_split_claim_leakage": [
+          "Obesity decreases life quality.",
+          "There is no association between HNF4A mutations and diabetes risks."
+        ],
+        "train_test_cross_split_claim_leakage": [
+          "Adult tissue-resident macrophages possess a self-renewing capacity."
+        ],
+        "test_set_unlabeled": "claims_test.jsonl has no 'evidence' or 'cited_doc_ids' fields (reserved for hidden evaluation benchmark)"
+      }
+    },
+    "MSVEC": {
+      "dataset_name": "MSVEC (Multi-Domain Scientific Claim Verification Evaluation Corpus)",
+      "source_repository": "https://github.com/sciverification/msvec",
+      "paper_title": "MSVEC: Multi-Domain Scientific Claim Verification Evaluation Corpus",
+      "domain": "Cross-domain scientific fact-checking (Biology, Medicine, Space, Geology, Politics, COVID-19)",
+      "original_task": "Evaluating robustness and out-of-domain generalization of SCV models (e.g. MultiVerS, GPT-3.5) on real-world fact-checked claims",
+      "unit_of_record": "Scientific claim extracted from Snopes/PolitiFact linked to a research paper DOI and abstract rationales",
+      "total_claims": 56,
+      "corpus_size": 5244,
+      "label_definitions": {
+        "SUPPORT": "Research paper rationale confirms claim",
+        "CONTRADICT": "Research paper rationale refutes claim",
+        "NO_EVIDENCE": "No rationale annotated in candidate corpus"
+      },
+      "label_distribution_scv": {
+        "NO_EVIDENCE": 20,
+        "SUPPORT": 53,
+        "CONTRADICT": 42
+      },
+      "fact_check_verdicts_distribution": {
+        "mixture": 3,
+        "true": 14,
+        "mostly false": 7,
+        "false": 33,
+        "mostly true": 4
+      },
+      "files": {
+        "msvec.json": {
+          "record_count": 56,
+          "file_size_bytes": 13822,
+          "fields": [
+            "id",
+            "claim",
+            "doc_ids",
+            "evidence"
+          ],
+          "missing_values": {
+            "id": 0,
+            "claim": 0,
+            "doc_ids": 0,
+            "evidence": 0
+          },
+          "word_statistics": {
+            "min": 9,
+            "max": 40,
+            "mean": 18.23,
+            "median": 18.0,
+            "total_words": 1021
+          }
+        },
+        "corpus.jsonl": {
+          "total_documents": 5244,
+          "file_size_bytes": 8410961,
+          "inherited_scifact_documents": 5183,
+          "novel_msvec_documents": 61
+        },
+        "dataset.txt": {
+          "total_annotated_entries": 61,
+          "unique_fact_check_urls": 61,
+          "unique_evidence_dois": 61
+        }
+      },
+      "quality_anomalies": {
+        "sample_size": "Small sample size (N=56 claims), designed strictly as an evaluation benchmark, not for model training",
+        "corpus_redundancy": "98.8% of the corpus documents are exact duplicates of SciFact corpus.jsonl",
+        "fact_check_sources": "Snopes.com and PolitiFact.com (journalistic scientific claims rather than direct academic citations)"
+      }
+    },
+    "SciCite": {
+      "dataset_name": "SciCite",
+      "source_repository": "https://github.com/allenai/scicite",
+      "paper_title": "Structural Scaffolds for Citation Intent Recognition in Scientific Texts",
+      "authors": "Arman Cohan, Waleed Ammar, Madeleine van Zuylen, Mostafa Dehghani",
+      "venue": "NAACL-HLT 2019 (arXiv:1904.01608)",
+      "domain": "Computer Science and Biomedical Sciences",
+      "original_task": "Citation Intent Classification (Background vs Method vs Result)",
+      "unit_of_record": "Citation context sentence (string) extracted from citing paper with character offsets to citation marker and Semantic Scholar paper IDs",
+      "total_core_records": 11020,
+      "total_scaffold_records": 164896,
+      "label_definitions": {
+        "background": "Citation provides context, background, or prior work for the study",
+        "method": "Citation refers to a method, algorithm, tool, data, or experimental protocol used/adapted",
+        "result": "Citation compares, supports, or contrasts results and findings with the cited work"
+      },
+      "label_distributions": {
+        "train.jsonl": {
+          "background": 4840,
+          "method": 2294,
+          "result": 1109
+        },
+        "dev.jsonl": {
+          "result": 123,
+          "background": 538,
+          "method": 255
+        },
+        "test.jsonl": {
+          "background": 997,
+          "result": 259,
+          "method": 605
+        }
+      },
+      "class_imbalance": {
+        "train": {
+          "background": "58.72%",
+          "method": "27.83%",
+          "result": "13.45%"
+        },
+        "dev": {
+          "background": "58.73%",
+          "method": "27.84%",
+          "result": "13.43%"
+        },
+        "test": {
+          "background": "53.57%",
+          "method": "32.51%",
+          "result": "13.92%"
+        }
+      },
+      "files": {
+        "train.jsonl": {
+          "file_size_bytes": 5967948,
+          "record_count": 8243,
+          "fields": [
+            "source",
+            "citeEnd",
+            "sectionName",
+            "citeStart",
+            "string",
+            "label",
+            "label_confidence",
+            "citingPaperId",
+            "citedPaperId",
+            "isKeyCitation",
+            "id",
+            "unique_id",
+            "excerpt_index"
+          ],
+          "missing_fields": {
+            "label2": 7408,
+            "label_confidence": 2106,
+            "sectionName": 587
+          },
+          "label_distribution": {
+            "background": 4840,
+            "method": 2294,
+            "result": 1109
+          },
+          "unique_citation_strings": 8242,
+          "duplicate_citation_strings": 1,
+          "word_statistics": {
+            "min": 7,
+            "max": 505,
+            "mean": 33.95,
+            "median": 31,
+            "total_words": 279825
+          }
+        },
+        "dev.jsonl": {
+          "file_size_bytes": 663774,
+          "record_count": 916,
+          "fields": [
+            "source",
+            "citeEnd",
+            "sectionName",
+            "citeStart",
+            "string",
+            "label",
+            "label2",
+            "citingPaperId",
+            "citedPaperId",
+            "isKeyCitation",
+            "id",
+            "unique_id",
+            "excerpt_index"
+          ],
+          "missing_fields": {
+            "label_confidence": 225,
+            "label2": 824,
+            "sectionName": 71
+          },
+          "label_distribution": {
+            "result": 123,
+            "background": 538,
+            "method": 255
+          },
+          "unique_citation_strings": 916,
+          "duplicate_citation_strings": 0,
+          "word_statistics": {
+            "min": 10,
+            "max": 219,
+            "mean": 34.14,
+            "median": 32.0,
+            "total_words": 31275
+          }
+        },
+        "test.jsonl": {
+          "file_size_bytes": 1313406,
+          "record_count": 1861,
+          "fields": [
+            "source",
+            "citeEnd",
+            "sectionName",
+            "citeStart",
+            "string",
+            "label",
+            "citingPaperId",
+            "citedPaperId",
+            "isKeyCitation",
+            "id",
+            "unique_id",
+            "excerpt_index"
+          ],
+          "missing_fields": {
+            "sectionName": 66,
+            "label2": 1617,
+            "label_confidence": 1668
+          },
+          "label_distribution": {
+            "background": 997,
+            "result": 259,
+            "method": 605
+          },
+          "unique_citation_strings": 1860,
+          "duplicate_citation_strings": 1,
+          "word_statistics": {
+            "min": 12,
+            "max": 187,
+            "mean": 34.08,
+            "median": 31,
+            "total_words": 63414
+          }
+        },
+        "cite-worthiness-scaffold-train.jsonl": {
+          "file_size_bytes": 59467814,
+          "record_count": 73484,
+          "task": "Auxiliary multitask scaffold: sentence-level cite-worthiness prediction (binary: is_citation)"
+        },
+        "sections-scaffold-train.jsonl": {
+          "file_size_bytes": 92903855,
+          "record_count": 91412,
+          "task": "Auxiliary multitask scaffold: section title/category classification"
+        }
+      },
+      "quality_anomalies": {
+        "sectionName_missing_count": 724,
+        "label2_sparse": "label2 ('supportive') is missing in ~90% of records; only populated for a fraction of 'result' citations",
+        "cross_split_duplicates": "2 citation strings appear in both train.jsonl and dev.jsonl",
+        "identifier_incompatibility": "Paper IDs are 40-character Semantic Scholar SHA hashes (e.g. 1872080baa7d30ec8fb87be9a65358cd3a7fb649), whereas SciFact/SCitance use integer S2ORC/PubMed IDs"
+      }
+    },
+    "SCitance": {
+      "dataset_name": "SCitance",
+      "source_repository": "https://github.com/allenai/scitance",
+      "paper_title": "Zero-shot Scientific Claim Verification Using LLMs and Citation Text",
+      "authors": "Carlos Alvarez, Max Bennett, Lucy Lu Wang",
+      "venue": "ACL 2024 SDP Workshop (DOI: 10.18653/v1/2024.sdp-1.1)",
+      "domain": "Biomedicine (S2ORC / SciFact source domain)",
+      "original_task": "In-text citation sentence verification against cited research papers",
+      "unit_of_record": "Natural citation sentence (citance) or synthetic negation paired with cited document IDs and evidence labels",
+      "total_claims": 649,
+      "corpus_size": 435,
+      "label_definitions": {
+        "SUPPORT": "Cited paper supports the in-text citation sentence",
+        "CONTRADICT": "Cited paper refutes the citation sentence (mostly synthetically generated negations)",
+        "NO_EVIDENCE": "Candidate document does not contain sufficient evidence"
+      },
+      "label_distributions": {
+        "train.jsonl": {
+          "SUPPORT": 178,
+          "CONTRADICT": 168,
+          "NO_EVIDENCE": 108
+        },
+        "dev.jsonl": {
+          "NO_EVIDENCE": 24,
+          "SUPPORT": 38,
+          "CONTRADICT": 35
+        },
+        "test.jsonl": {
+          "SUPPORT": 35,
+          "CONTRADICT": 48,
+          "NO_EVIDENCE": 15
+        }
+      },
+      "class_imbalance": {
+        "train": {
+          "SUPPORT": "39.21%",
+          "CONTRADICT": "37.00%",
+          "NO_EVIDENCE": "23.79%"
+        },
+        "dev": {
+          "SUPPORT": "39.18%",
+          "CONTRADICT": "36.08%",
+          "NO_EVIDENCE": "24.74%"
+        },
+        "test": {
+          "CONTRADICT": "48.98%",
+          "SUPPORT": "35.71%",
+          "NO_EVIDENCE": "15.31%"
+        }
+      },
+      "files": {
+        "train.jsonl": {
+          "file_size_bytes": 142440,
+          "record_count": 454,
+          "fields": [
+            "claim",
+            "id",
+            "evidence",
+            "citance_id",
+            "doc_ids"
+          ],
+          "missing_fields": {},
+          "label_distribution": {
+            "SUPPORT": 178,
+            "CONTRADICT": 168,
+            "NO_EVIDENCE": 108
+          },
+          "unique_claims": 454,
+          "duplicate_claims": 0,
+          "word_statistics": {
+            "min": 8,
+            "max": 97,
+            "mean": 30.1,
+            "median": 27.0,
+            "total_words": 13667
+          }
+        },
+        "dev.jsonl": {
+          "file_size_bytes": 31339,
+          "record_count": 97,
+          "fields": [
+            "claim",
+            "id",
+            "evidence",
+            "citance_id",
+            "doc_ids"
+          ],
+          "missing_fields": {},
+          "label_distribution": {
+            "NO_EVIDENCE": 24,
+            "SUPPORT": 38,
+            "CONTRADICT": 35
+          },
+          "unique_claims": 97,
+          "duplicate_claims": 0,
+          "word_statistics": {
+            "min": 10,
+            "max": 74,
+            "mean": 31.98,
+            "median": 28,
+            "total_words": 3102
+          }
+        },
+        "test.jsonl": {
+          "file_size_bytes": 31496,
+          "record_count": 98,
+          "fields": [
+            "claim",
+            "id",
+            "evidence",
+            "citance_id",
+            "doc_ids"
+          ],
+          "missing_fields": {},
+          "label_distribution": {
+            "SUPPORT": 35,
+            "CONTRADICT": 48,
+            "NO_EVIDENCE": 15
+          },
+          "unique_claims": 98,
+          "duplicate_claims": 0,
+          "word_statistics": {
+            "min": 13,
+            "max": 73,
+            "mean": 30.9,
+            "median": 29.5,
+            "total_words": 3028
+          }
+        },
+        "corpus.jsonl": {
+          "file_size_bytes": 734321,
+          "total_documents": 435,
+          "fields": [
+            "title",
+            "abstract",
+            "doc_id"
+          ],
+          "unique_doc_ids": 435,
+          "corpus_title_bug": "100% of title entries (435/435) contain the first sentence of the abstract instead of the true paper title"
+        }
+      },
+      "quality_anomalies": {
+        "title_field_corruption": "In corpus.jsonl, 435 of 435 records have abstract[0] placed in the 'title' field instead of the actual paper title",
+        "synthetic_negation_prevalence": "251 of 649 claims (38.67%) are synthetically generated LLM negations (using text-davinci-003 / GPT-4)",
+        "cross_split_doc_leakage_with_scifact": "81 of 94 cited documents in SCitance test.jsonl (86.17%) were part of the SciFact training set",
+        "near_duplicate_overlap_with_scifact": "25 claim pairs share >=70% lexical Jaccard similarity with SciFact claims"
+      }
+    }
+  },
+  "cross_dataset_comparison": {
+    "corpus_document_overlap": {
+      "scifact_total_docs": 5183,
+      "msvec_total_docs": 5244,
+      "scitance_total_docs": 435,
+      "scifact_in_msvec": "5183 / 5183 (100.0%)",
+      "scitance_in_scifact": "435 / 435 (100.0%)",
+      "sciclaim_docs": 15,
+      "sciclaim_overlap_with_scifact": 0
+    },
+    "cross_dataset_claim_overlap": {
+      "scifact_vs_scitance_exact_matches": 0,
+      "scifact_vs_scitance_near_duplicates_jaccard_gte_0_7": 25,
+      "scifact_vs_msvec_exact_matches": 0,
+      "sciclaim_vs_all_others": 0,
+      "scicite_vs_all_others": 0
+    },
+    "schema_standardization_potential": {
+      "claim_text_field": {
+        "SciClaim": "text (after stripping (title:...) prefix)",
+        "SciFact": "claim",
+        "MSVEC": "claim",
+        "SciCite": "string (citation context)",
+        "SCitance": "claim (citation sentence)"
+      },
+      "document_identifier_field": {
+        "SciClaim": "Paper title extracted from prefix",
+        "SciFact": "doc_id (integer)",
+        "MSVEC": "doc_ids (integer list) / DOI in dataset.txt",
+        "SciCite": "citingPaperId, citedPaperId (40-char hex string)",
+        "SCitance": "doc_ids (integer list), citance_id (integer)"
+      },
+      "evidence_field": {
+        "SciClaim": "Integrated as sentence label (2=Evidence)",
+        "SciFact": "evidence: {doc_id: [{sentences: [...], label: ...}]}",
+        "MSVEC": "evidence: {doc_id: [{sentences: [...], label: ...}]}",
+        "SciCite": "None (evidence rationales not annotated)",
+        "SCitance": "evidence: {doc_id: [{label: ...}]}"
+      }
+    },
+    "label_compatibility_matrix": {
+      "SciClaim": {
+        "1": "Claim",
+        "2": "Evidence",
+        "0": "None"
+      },
+      "SciFact": {
+        "SUPPORT": "Entailment",
+        "CONTRADICT": "Contradiction",
+        "NO_EVIDENCE": "Neutral/NEI"
+      },
+      "MSVEC": {
+        "SUPPORT": "Entailment",
+        "CONTRADICT": "Contradiction",
+        "NO_EVIDENCE": "Neutral/NEI"
+      },
+      "SciCite": {
+        "background": "Citation Intent",
+        "method": "Citation Intent",
+        "result": "Citation Intent"
+      },
+      "SCitance": {
+        "SUPPORT": "Entailment",
+        "CONTRADICT": "Contradiction",
+        "NO_EVIDENCE": "Neutral/NEI"
+      }
+    }
+  }
+}
