@@ -1,0 +1,60 @@
+CITATIONGUARD AI SOFTWARE & RESEARCH LICENSE
+Copyright (c) 2026 Ohi (https://github.com/ekraislam).
+All Rights Reserved.
+
+NOTICE: PROPRIETARY & SOURCE-AVAILABLE RESEARCH LICENSE.
+UNAUTHORIZED COMMERCIAL EXPLOITATION, RE-LICENSING, PLAGIARISM,
+OR UNATTRIBUTED REDISTRIBUTION IS STRICTLY FORBIDDEN.
+
+================================================================================
+TERMS AND CONDITIONS FOR ACCESS, USE, AND REPRODUCTION
+================================================================================
+
+1. OWNERSHIP AND INTELLECTUAL PROPERTY
+The software, machine learning architectures, fine-tuned model artifacts,
+dataset aggregation schemas, user interface designs, and documentation
+comprising the CitationGuard AI repository are the exclusive intellectual
+property of the Author: Ohi (GitHub: @ekraislam). 
+All rights not expressly granted herein are strictly reserved.
+
+2. PERMITTED USES (NON-COMMERCIAL RESEARCH & EDUCATIONAL USE ONLY)
+You are permitted to:
+  a) Clone and review the source code for personal educational study,
+     peer-review verification, and academic evaluation.
+  b) Run the software locally for private testing and empirical benchmarking.
+  c) Cite and reference the research methodologies in academic publications,
+     subject to Mandatory Attribution (Section 4).
+
+3. PROHIBITED ACTIONS (ANTI-THEFT & STRICT RESTRICTIONS)
+You may NOT under any circumstances:
+  a) Sell, rent, lease, sub-license, monetize, or commercially exploit any
+     part of this codebase, dataset, weights, or user interface.
+  b) Re-brand, re-name, or present this project, its code, design, or dataset
+     as your own creation (Plagiarism & Attribution Theft).
+  c) Create derivative works or modified forks for distribution without
+     explicit prior written permission from the Author.
+  d) Remove, alter, or obscure any copyright notices, author credits,
+     digital watermarks, or license headers in this repository.
+  e) Use this software or its curated dataset to train proprietary commercial
+     models or incorporate it into closed-source commercial applications.
+
+4. MANDATORY ATTRIBUTION
+Any permitted academic citation or educational reference must conspicuously
+credit the original author as follows:
+  "CitationGuard AI — Designed & Developed by Ohi (ekraislam)"
+  Repository: https://github.com/ekraislam/citationguard-ai
+
+5. ENFORCEMENT & VIOLATION
+Any unauthorized distribution, commercial appropriation, or removal of author
+attribution constitutes copyright infringement and intellectual property theft,
+subject to legal remedies and formal DMCA takedown actions under applicable
+international copyright treaties and laws.
+
+6. NO WARRANTY & LIMITATION OF LIABILITY
+THIS SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHOR OR COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+IN THE SOFTWARE.

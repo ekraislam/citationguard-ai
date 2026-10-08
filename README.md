@@ -7,7 +7,7 @@
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![PyTorch 2.0+](https://img.shields.io/badge/PyTorch-2.0+-ee4c2c.svg)](https://pytorch.org/)
 [![Transformers 4.30+](https://img.shields.io/badge/🤗_Transformers-4.30+-ffd21e.svg)](https://huggingface.co/)
-[![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC_BY--NC_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
+[![License: All Rights Reserved](https://img.shields.io/badge/License-All_Rights_Reserved-crimson.svg)](LICENSE)
 [![Model: PubMedBERT](https://img.shields.io/badge/Model-BiomedNLP--PubMedBERT-0284c7.svg)](https://huggingface.co/microsoft/BiomedNLP-PubMedBERT-base-uncased-abstract)
 
 *A scholarly computational system designed to detect unsupported academic claims, evaluate empirical grounding, and eliminate citation hallucinations in scientific literature.*
@@ -186,16 +186,21 @@ All splits enforce document-level leakage isolation (`0` cross-split duplicate l
 
 ---
 
-## 📄 License & Attribution
+## 📄 License & Intellectual Property
 
-This project is released under the **Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0)** for academic, peer-review, and research purposes.
+Copyright © 2026 **Ohi** ([@ekraislam](https://github.com/ekraislam)). All Rights Reserved.
+
+This project, its machine learning pipelines, fine-tuned configurations, curated datasets, and interface designs are protected under the **CitationGuard AI Software & Research License** (see [LICENSE](LICENSE)).
+
+- 🚫 **Strictly Forbidden:** Commercial exploitation, monetization, re-branding, plagiarizing authorship, or closed-source redistribution.
+- 🔬 **Permitted:** Non-commercial educational study, peer-review inspection, and academic verification with mandatory attribution.
 
 ### Citation
-If you use CitationGuard AI in your research, please cite:
+If you reference CitationGuard AI in your academic work, cite as:
 
 ```bibtex
 @software{citationguard_ai_2026,
-  author = {CitationGuard AI Research Team},
+  author = {Ohi and CitationGuard AI Research},
   title = {CitationGuard AI: Evidence-Aware Scientific Citation Verification for Detecting Unsupported Academic Claims},
   year = {2026},
   publisher = {GitHub},
