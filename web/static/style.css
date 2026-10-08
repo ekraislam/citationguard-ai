@@ -1170,10 +1170,45 @@ body {
     max-width: 1360px;
     margin: 0 auto;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    gap: 16px;
     font-size: 13px;
     color: var(--text-muted);
+}
+
+.footer-text strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.footer-credit {
+    font-size: 13px;
+    color: var(--text-muted);
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.credit-link {
+    color: var(--brand-terracotta);
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.15s ease;
+    border-bottom: 1px solid transparent;
+}
+
+.credit-link:hover {
+    color: var(--brand-terracotta-hover);
+    border-bottom-color: var(--brand-terracotta);
+}
+
+@media (max-width: 768px) {
+    .footer-inner {
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+    }
 }
 
 /* Toast */
