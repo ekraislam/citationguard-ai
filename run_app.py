@@ -23,9 +23,12 @@ from inference import get_verifier
 from app import app
 
 def main():
+    default_port = int(os.environ.get("PORT", 7860 if "SPACE_ID" in os.environ else 5000))
+    default_host = os.environ.get("HOST", "0.0.0.0" if "SPACE_ID" in os.environ else "127.0.0.1")
+
     parser = argparse.ArgumentParser(description="CitationGuard AI Web Application Server")
-    parser.add_argument("--host", type=str, default="127.0.0.1", help="Host interface (default: 127.0.0.1)")
-    parser.add_argument("--port", type=int, default=5000, help="Port to bind (default: 5000)")
+    parser.add_argument("--host", type=str, default=default_host, help=f"Host interface (default: {default_host})")
+    parser.add_argument("--port", type=int, default=default_port, help=f"Port to bind (default: {default_port})")
     parser.add_argument("--debug", action="store_true", help="Enable Flask debug mode")
     args = parser.parse_args()
 

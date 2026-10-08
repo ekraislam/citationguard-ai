@@ -1,0 +1,20 @@
+.git
+.gitignore
+__pycache__
+*.pyc
+*.pyo
+venv
+.venv
+env
+scratch
+*.log
+
+# Exclude offline training corpora from web serving docker image to keep image small
+data
+scitance-main
+SciClaim-Dataset-main
+msvec-main
+scicite
+CitationGuard-Unified
+dataset_audit_report.md
+dataset_statistics.json
