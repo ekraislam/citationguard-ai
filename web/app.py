@@ -72,6 +72,7 @@ def health():
             "model_name": "microsoft/BiomedNLP-PubMedBERT-base-uncased-abstract",
             "checkpoint": "models/best_checkpoint_strict",
             "device": str(v.device),
+            "engine_mode": "fallback_cloud_demo" if getattr(v, "is_fallback", False) else "production_pubmedbert",
             "classes": ["SUPPORTED", "CONTRADICTED", "NOT_ENOUGH_EVIDENCE"]
         }), 200
     except Exception as e:
